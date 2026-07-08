@@ -9,6 +9,12 @@ const groq = new Groq({
 
 const rl = readline.createInterface({ input, output });
 
+// Sets the assistant's role/behavior for the whole conversation, separate
+// from the back-and-forth turns. Groq's API is OpenAI-compatible, so this
+// is sent as a 'system' role message rather than a top-level `system` field.
+const SYSTEM_PROMPT =
+  'You are a friendly, concise assistant. Keep answers short and to the point.';
+
 // 1. Prompt the user to enter some input
 async function promptUser() {
   return rl.question('You: ');
@@ -32,6 +38,7 @@ async function callApi(messages) {
 
 async function main() {
   const messages = [];
+  addMessage(messages, 'system', SYSTEM_PROMPT);
 
   while (true) {
     // 1. Prompt the user
