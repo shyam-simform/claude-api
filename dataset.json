@@ -1,0 +1,11 @@
+[
+  {
+    "task": "Write a Python function to reverse a string input by a user."
+  },
+  {
+    "task": "Create a JSON configuration file for a simple user with name and email properties."
+  },
+  {
+    "task": "Validate if a given string only contains letters and numbers using a regular expression."
+  }
+]
