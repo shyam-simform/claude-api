@@ -48,11 +48,12 @@ async function generateDataset(count = 3) {
   const prompt = `Generate an evaluation dataset for testing a prompt that helps AWS users write Python code, JSON configuration, or regular expressions.
 
 Return ONLY a raw JSON array (no markdown code fences, no extra text before or after) of ${count} objects, each shaped exactly like:
-{ "task": "Description of task" }
+{ "task": "Description of task", "format": "python" }
 
 Rules:
 - Each task must be solvable with a single Python function, a single JSON object, or a single regex.
-- Keep each task small — something that doesn't require much code to solve.`;
+- Keep each task small — something that doesn't require much code to solve.
+- "format" must be exactly one of: "python", "json", "regex" — matching what the task actually requires.`;
 
   const response = await groq.chat.completions.create({
     model: FAST_MODEL,

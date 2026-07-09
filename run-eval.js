@@ -38,6 +38,21 @@
  * layer later (e.g. replacing the hardcoded score in runTestCase with
  * a real grader) without touching the others.
  *
+ * GRADING (now implemented — see gradeOutput() below)
+ * Grading is just a SECOND model call whose only job is to judge the
+ * first model call's answer. Think of it like a teacher marking
+ * homework: read the question, read the student's answer, decide how
+ * good it is and why, then write down a score. We hand the grader
+ * both the original task AND the model's output, and ask it to score
+ * 1-10.
+ *
+ * The tricky part: if we just ask "give me a score" in plain text, the
+ * grader might reply with a sentence like "I'd say around an 8" —
+ * annoying to parse reliably. So (same trick as structured-data.js) we
+ * FORCE the grader to fill out a rigid schema via function calling:
+ * { score: number, reasoning: string }. No sentence to parse, no
+ * ambiguity — the grader has no choice but to hand back clean data.
+ *
  * NOTE ON SPEED: the lesson mentions using a fast/cheap model (like
  * Claude Haiku) since running a full dataset takes real wall-clock
  * time — one model call per test case. We're already on
@@ -92,19 +107,69 @@ ${testCase.task}
 }
 
 // ---------------------------------------------------------------------
+// Grading — the "teacher" model call. Given the original task and the
+// model's output, force a clean { score, reasoning } via function
+// calling instead of hoping a free-text reply parses cleanly.
+// ---------------------------------------------------------------------
+async function gradeOutput(task, output) {
+  const response = await groq.chat.completions.create({
+    model: MODEL,
+    max_tokens: 300,
+    tools: [
+      {
+        type: 'function',
+        function: {
+          name: 'submit_grade',
+          description: 'Submit a quality score for a solution to a task.',
+          parameters: {
+            type: 'object',
+            properties: {
+              score: {
+                type: 'number',
+                description: '1-10 quality score. 10 = perfect solution, 1 = wrong or unhelpful.',
+              },
+              reasoning: {
+                type: 'string',
+                description: 'One short sentence explaining the score.',
+              },
+            },
+            required: ['score', 'reasoning'],
+          },
+        },
+      },
+    ],
+    tool_choice: { type: 'function', function: { name: 'submit_grade' } },
+    messages: [
+      {
+        role: 'user',
+        content: `You are grading the quality of a solution to a task.
+
+Task: ${task}
+Solution: ${output}
+
+Score the solution's quality from 1 to 10 (10 = correct, complete, well-explained; 1 = wrong or unhelpful).`,
+      },
+    ],
+  });
+
+  const toolCall = response.choices[0].message.tool_calls[0];
+  return JSON.parse(toolCall.function.arguments); // { score, reasoning }
+}
+
+// ---------------------------------------------------------------------
 // 2. Calls runPrompt, then grades the result
 // ---------------------------------------------------------------------
 async function runTestCase(testCase) {
   const output = await runPrompt(testCase);
 
-  // TODO - Grading. Hardcoded for now so we can verify the pipeline
-  // end-to-end before investing in real grading logic.
-  const score = 10;
+  // Real grading — replaces the old hardcoded `score = 10` placeholder.
+  const { score, reasoning } = await gradeOutput(testCase.task, output);
 
   return {
     output,
     testCase,
     score,
+    reasoning,
   };
 }
 
@@ -127,6 +192,15 @@ async function main() {
   console.log(`Running eval on ${dataset.length} test case(s)...\n`);
 
   const results = await runEval(dataset);
+
+  // Quick human-readable summary, then the full structured results.
+  for (const r of results) {
+    console.log(`- "${r.testCase.task}" -> score ${r.score}/10 (${r.reasoning})`);
+  }
+  const average = results.reduce((sum, r) => sum + r.score, 0) / results.length;
+  console.log(`\nAverage score: ${average.toFixed(2)}`);
+
+  console.log('\nFull structured results:');
   console.log(JSON.stringify(results, null, 2));
 }
 

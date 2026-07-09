@@ -1,11 +1,14 @@
 [
   {
-    "task": "Write a Python function to reverse a string input by a user."
+    "task": "Write a Python function to check if a year is a leap year.",
+    "format": "python"
   },
   {
-    "task": "Create a JSON configuration file for a simple user with name and email properties."
+    "task": "Create a JSON object to represent a simple user profile with id, name, and email.",
+    "format": "json"
   },
   {
-    "task": "Validate if a given string only contains letters and numbers using a regular expression."
+    "task": "Regular expression to validate IP addresses in the format xxx.xxx.xxx.xxx where xxx is a number between 0 and 255.",
+    "format": "regex"
   }
 ]
