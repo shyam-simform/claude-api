@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prompt Evaluation Report</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #ececec; margin: 0; padding: 32px; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 24px; }
+  .cards { display: flex; gap: 16px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 6px; padding: 16px 24px; flex: 1; }
+  .card .label { font-size: 13px; color: #57606a; margin-bottom: 8px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th { background: #24292f; color: #fff; text-align: left; padding: 10px 12px; font-size: 13px; }
+  td { padding: 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; font-size: 13px; }
+  pre { white-space: pre-wrap; font-family: inherit; margin: 0; background: #f6f8fa; padding: 8px; border-radius: 4px; }
+  .score-badge { display: inline-block; min-width: 24px; text-align: center; color: #fff; border-radius: 4px; padding: 2px 8px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Prompt Evaluation Report</h1>
+  <div class="cards">
+    <div class="card"><div class="label">Total Test Cases</div><div class="value">3</div></div>
+    <div class="card"><div class="label">Average Score</div><div class="value">7.7 / 10</div></div>
+    <div class="card"><div class="label">Pass Rate (&ge;7)</div><div class="value">66.7%</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Prompt Inputs</th>
+        <th>Scenario</th>
+        <th>Solution Criteria</th>
+        <th>Output</th>
+        <th>Score</th>
+        <th>Reasoning</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><b>height:</b> 165<br><b>weight:</b> 55<br><b>goal:</b> &quot;Training for a marathon&quot;<br><b>restrictions:</b> &quot;gluten free&quot;</td>
+          <td>30-year-old female athlete training for a marathon with an ideal weight of 55 kg and restricting gluten intake</td>
+          <td>- Meal plan should consist of 3 main meals and 2 snacks<br>- Total daily calories should be between 2500-3000<br>- Gluten-free bread and grains should be used for all meals<br>- Each meal should include a source of protein and complex carbohydrate<br>- Snacks should be light and easy to digest<br>- A hydration plan should also be included</td>
+          <td><pre>To provide the best recommendations for this person's diet, we'll consider their height, weight, goal, and dietary restrictions.
+
+**Current Body Status:**
+- Height: 165 cm
+- Weight: 55 kg (approximately 121 lbs)
+- BMI (Body Mass Index): around 17.4 (underweight)
+
+**Training for a Marathon:**
+For a marathon training, the person requires an additional 250-500 calories per day, which is approximately 300-500 kcal more than their maintenance level. This will help them build endurance and store energy for their long-distance runs.
+
+**Gluten-Free Dietary Requirements:**
+Gluten-free diets can be restrictive but also offer opportunities to focus on whole, nutritious foods. To ensure adequate intake of essential nutrients, focus on the following:
+
+1. **Carbohydrates:** Include complex, gluten-free carbs like:
+	* Brown rice
+	* Quinoa
+	* Sweet potatoes
+	* Fruits
+	* Gluten-free bread (made from rice, corn, or almond flour)
+2. **Protein:** Emphasize lean proteins:
+	* Boneless, skinless chicken breast or thighs
+	* Fish (salmon, tilapia, or cod)
+	* Turkey breast or thighs
+	* Tofu
+	* Legumes (beans, lentils)
+3. **Healthy Fats:** Incorporate essential fats from:
+	* Nuts (almonds, walnuts, or pecans)
+	* Avocados
+	* Coconut oil
+4. **Electrolytes and Fluids:** Adequate hydration, especially during and after runs, is crucial for runners:
+	* Drink water or electrolyte-rich beverages (sports drinks like coconut water or Nuun)
+
+**Meal Recommendations:**
+
+- **Breakfast:**
+	+ Overnight oats with almond milk and berries
+	+ Avocado toast on gluten-free bread with scrambled eggs
+	+ Greek yogurt with granola and fresh fruit
+
+- **Lunch:**
+	+ Salad with grilled chicken and quinoa
+	+ Brown rice bowl with roasted vegetables
+	+ Grilled salmon with roasted sweet potatoes
+
+- **Snacks:**
+	+ Fresh fruit (e.g., bananas, apples, or berries)
+	+ Energy bars (gluten-free and high in protein)
+	+ Trail mix with nuts, seeds, and dried fruits
+
+- **Evening Snack:**
+	+ Cottage cheese with cucumber slices
+	+ Greek yogurt with honey and almonds
+
+- **Post-Run Snack (within 30 minutes):**
+	+ Sports drink or coconut water
+	+ Energy gels or chews
+	+ Banana with almond butter
+
+**Remember:** A balanced diet is individualized and may involve adjustments based on how the person reacts to different foods. Consult with a registered dietitian or a healthcare professional for more personalized guidance.
+
+**Additional Tips:**
+
+1. **Listen to your body**: Pay attention to your needs, hunger, and satiety cues.
+2. **Stay hydrated**: Drink plenty of water throughout the day and consume electrolyte-rich beverages during and after runs.
+3. **Get enough sleep**: A minimum of 7-9 hours is crucial for recovery and muscle repair.
+4. **Avoid processed foods**: Stick to whole, nutrient-dense foods as much as possible.
+
+**Disclaimer:** This information is for general guidance only. If you have any pre-existing conditions, concerns, or doubts, consult a healthcare professional or registered dietitian for personalized advice.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The AI output provides a general meal plan for a marathon training athlete with gluten restrictions, but it lacks specific caloric and macronutrient details, and does not address all the solution criteria. It also fails to include a hydration plan with exact fluid intake recommendations.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 188<br><b>weight:</b> 90<br><b>goal:</b> &quot;Competing in a high-intensity rugby tournament&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Male athlete competing in a high-intensity rugby tournament with 90 kg and high carbohydrate needs</td>
+          <td>- Meal plan should consist of 3 main meals and 2-3 snacks<br>- Total daily calories should be between 3500-4500<br>- Meals should include a high source of complex carbohydrates<br>- Protein intake should be balanced with carbohydrates to support muscle function<br>- At least 1 meal should include a source of healthy fats<br>- Hydration should be emphasized throughout the day</td>
+          <td><pre>To provide a recommendation, let's first calculate this person's body mass index (BMI) and assess their nutritional needs.
+
+Height (in meters): 1.88 m
+Weight (in kg): 90 kg
+
+BMI calculation: 
+Weight (in kg) / (Height (in meters) x Height (in meters)) 
+
+BMI = 90 / (1.88 x 1.88)
+BMI = 25
+
+A BMI of 25 is considered overweight for athletes. For a rugby player, a more athletic weight range would be 80-90 kg for a height of 188 cm, or in the BMI range of 21-24.
+
+To achieve a competitive weight and maintain it during the tournament, this individual should focus on a balanced diet, emphasizing lean proteins, complex carbohydrates, and healthy fats.
+
+**Recommended Daily Macro-nutrients and Caloric Intake**
+
+* Total daily calories: 3500-4000 per day
+* Daily protein intake: 1.6-2 grams per kg body weight (145-180 grams per day)
+* Daily complex carbohydrate intake: 6-8 ounces (170-225 grams) per day
+* Daily fat intake: 0.5-1 gram per kg body weight (45-90 grams per day)
+
+**Recommended Foods**
+
+* Protein: Chicken breast, lean beef, fish, eggs, beans, lentils
+* Complex carbohydrates: Whole wheat bread, brown rice, quinoa, oats, fruits and vegetables
+* Healthy fats: Nuts, seeds, avocados, olive oil
+
+**Meal Ideas and Sample Daily Plan**
+
+- Breakfast: Overnight oats with banana, almond milk, and walnuts (450 calories, 35g carbs, 25g protein, 20g fat)
+- Lunch: Grilled chicken breast with quinoa and vegetables (600 calories, 60g carbs, 45g protein, 20g fat)
+- Snack: Apple slices with almond butter (150 calories, 15g carbs, 4g protein, 8g fat)
+- Dinner: Grilled salmon with sweet potato and green beans (550 calories, 30g carbs, 40g protein, 20g fat)
+- Snack (before bed): Casein protein shake (250 calories, 30g carbs, 20g protein, 10g fat)
+
+Please consult with a registered dietitian or nutritionist for individualized advice, taking into account specific dietary needs, medical conditions, or allergies not mentioned.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">9.0</span></td>
+          <td>The AI output mostly addresses the task, scenario, and criteria, providing a compact and informative meal plan with appropriate nutritional needs. However, it fails to address hydration specifically and does not entirely meet the daily calorie range.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 160<br><b>weight:</b> 50<br><b>goal:</b> &quot;Training for a 5K run&quot;<br><b>restrictions:</b> &quot;organic, vegetarian&quot;</td>
+          <td>Vegetarian athlete training for a 5K run with 50 kg and preferring organic food options</td>
+          <td>- Meal plan should consist of 3 main meals and 1-2 snacks<br>- Total daily calories should be between 1500-2000<br>- Meals should be well-balanced with a focus on plant-based protein sources (legumes, nuts)<br>- Organic options for fruits, vegetables, and protein sources should be prioritized<br>- Hydration should be emphasized, especially before and after workouts<br>- A plan for post-workout recovery should also be included</td>
+          <td><pre>To determine what this person should eat, let's consider their height, weight, goal, and dietary restrictions.
+
+**Body Mass Index (BMI)**: For a 160 cm (5'3&quot;) height and 50 kg (110 lbs) weight, the BMI is around 17.1, which is underweight.
+
+**Caloric Needs**: To train for a 5K run, this person will require a caloric intake that supports their energy needs for exercise and daily life. The International Society of Sports Nutrition recommends that endurance athletes consume 15-20 calories per kilogram of body weight. Based on the weight of 50 kg, their caloric needs would be around 750-1000 calories/day.
+
+**Macronutrient Breakdown**: A vegetarian athlete would require a balanced macronutrient distribution:
+- Carbohydrates: 55-65% of total calories (2-3 grams of carbohydrates per kilogram of body weight)
+- Protein: 15-20% of total calories (1.2-1.6 grams of protein per kilogram of body weight)
+- Fat: 20-25% of total calories
+
+**Food Recommendations**: Considering the dietary restrictions, here are some meal and snack suggestions that support this person's caloric needs and macronutrient breakdown:
+
+**Breakfast**:
+- Oatmeal (100g cooked with almond milk and organic fruits)
+- Organic whole-grain toast with avocado and organic eggs
+- Veggie omelet with spinach and whole-grain English muffin
+
+**Snacks**:
+- Organic fruit (e.g., apples, bananas)
+- Dark chocolate (70-80% cocoa, organic)
+- Hummus with carrot sticks and organic whole-grain crackers
+
+**Lunch**:
+- Quinoa salad with roasted vegetables, avocado, and a citrus vinaigrette dressing
+- Whole-grain pasta with organic marinara sauce and roasted vegetables
+- Organic lentil or vegetable soup with whole-grain bread
+
+**Dinner**:
+- Grilled portobello mushrooms or eggplant with quinoa
+- Vegetable stir-fry with organic tofu and brown rice
+- Stuffed bell peppers with quinoa, black beans, and organic vegetables
+
+**Hydration**: Proper hydration is crucial for athletes. Aim for at least 8-10 glasses of water per day.
+
+**Supplements**: If not getting enough nutrients through diet alone, consider adding the following supplements:
+
+- Multivitamin (organic and vegetarian)
+- Omega-3 fatty acids (algal oil or organic flaxseed oil)
+- Iron supplements (as needed due to low iron stores)
+
+**Note**: Consult with a registered dietitian or a healthcare professional for a personalized nutrition plan. They will assess this person's specific needs, medical history, and take into account any potential food sensitivities or allergies.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The output provides a comprehensive 1-day meal plan that meets most of the criteria, but falls short on providing a daily caloric total and specific meal timing. Additionally, it lacks a detailed macronutrient breakdown and assumes a caloric intake of 750-1000 calories/day, which may not meet the daily energy needs of an athlete training for a 5K run.</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>

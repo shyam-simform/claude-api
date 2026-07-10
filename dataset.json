@@ -1,14 +1,26 @@
 [
   {
-    "task": "Write a Python function to check if a year is a leap year.",
-    "format": "python"
+    "scenario": "30-year-old female athlete training for a marathon with an ideal weight of 55 kg and restricting gluten intake",
+    "height": 165,
+    "weight": 55,
+    "goal": "Training for a marathon",
+    "restrictions": "gluten free",
+    "solutionCriteria": "- Meal plan should consist of 3 main meals and 2 snacks\n- Total daily calories should be between 2500-3000\n- Gluten-free bread and grains should be used for all meals\n- Each meal should include a source of protein and complex carbohydrate\n- Snacks should be light and easy to digest\n- A hydration plan should also be included"
   },
   {
-    "task": "Create a JSON object to represent a simple user profile with id, name, and email.",
-    "format": "json"
+    "scenario": "Male athlete competing in a high-intensity rugby tournament with 90 kg and high carbohydrate needs",
+    "height": 188,
+    "weight": 90,
+    "goal": "Competing in a high-intensity rugby tournament",
+    "restrictions": "",
+    "solutionCriteria": "- Meal plan should consist of 3 main meals and 2-3 snacks\n- Total daily calories should be between 3500-4500\n- Meals should include a high source of complex carbohydrates\n- Protein intake should be balanced with carbohydrates to support muscle function\n- At least 1 meal should include a source of healthy fats\n- Hydration should be emphasized throughout the day"
   },
   {
-    "task": "Regular expression to validate IP addresses in the format xxx.xxx.xxx.xxx where xxx is a number between 0 and 255.",
-    "format": "regex"
+    "scenario": "Vegetarian athlete training for a 5K run with 50 kg and preferring organic food options",
+    "height": 160,
+    "weight": 50,
+    "goal": "Training for a 5K run",
+    "restrictions": "organic, vegetarian",
+    "solutionCriteria": "- Meal plan should consist of 3 main meals and 1-2 snacks\n- Total daily calories should be between 1500-2000\n- Meals should be well-balanced with a focus on plant-based protein sources (legumes, nuts)\n- Organic options for fruits, vegetables, and protein sources should be prioritized\n- Hydration should be emphasized, especially before and after workouts\n- A plan for post-workout recovery should also be included"
   }
 ]
