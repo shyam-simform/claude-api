@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prompt Evaluation Report</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #ececec; margin: 0; padding: 32px; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 24px; }
+  .cards { display: flex; gap: 16px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 6px; padding: 16px 24px; flex: 1; }
+  .card .label { font-size: 13px; color: #57606a; margin-bottom: 8px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th { background: #24292f; color: #fff; text-align: left; padding: 10px 12px; font-size: 13px; }
+  td { padding: 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; font-size: 13px; }
+  pre { white-space: pre-wrap; font-family: inherit; margin: 0; background: #f6f8fa; padding: 8px; border-radius: 4px; }
+  .score-badge { display: inline-block; min-width: 24px; text-align: center; color: #fff; border-radius: 4px; padding: 2px 8px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Prompt Evaluation Report</h1>
+  <div class="cards">
+    <div class="card"><div class="label">Total Test Cases</div><div class="value">8</div></div>
+    <div class="card"><div class="label">Average Score</div><div class="value">7.4 / 10</div></div>
+    <div class="card"><div class="label">Pass Rate (&ge;7)</div><div class="value">50.0%</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Prompt Inputs</th>
+        <th>Scenario</th>
+        <th>Solution Criteria</th>
+        <th>Output</th>
+        <th>Score</th>
+        <th>Reasoning</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 65<br><b>goal:</b> &quot;Gain energy for a high-intensity volleyball game&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Volleyball player wants a high-carb meal plan for the day before a game</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 4 servings of complex carbohydrates<br>- Include lean protein sources (chicken, fish, beans)<br>- Less than 50g of fat<br>- Drink at least 2 liters of water</td>
+          <td><pre>To create a one-day meal plan for the athlete, we'll consider their goal of gaining energy for a high-intensity volleyball game, as well as their height, weight, and dietary restrictions (which are not specified). 
+
+Assuming the athlete has general dietary restrictions, we'll exclude common allergens and focus on nutrient-dense foods to support energy and performance. Here's a sample meal plan:
+
+**Breakfast**
+
+- Oatmeal with banana and almond milk: 
+  - 250ml almond milk
+  - 2 tablespoons rolled oats
+  - 1 medium banana
+  - 1 tablespoon honey (optional)
+  Total calories: approximately 350
+
+**Mid-morning Snack**
+
+- Apple slices with almond butter: 
+  - 1 medium apple
+  - 2 tablespoons almond butter
+  Total calories: approximately 190
+
+**Lunch**
+
+- Grilled chicken breast with quinoa and steamed vegetables: 
+  - 120g grilled chicken breast
+  - 1 cup cooked quinoa
+  - 1 cup steamed mixed vegetables (carrots, green beans, bell peppers)
+  - 2 tablespoons olive oil
+  Total calories: approximately 450
+
+**Afternoon Snack**
+
+- Greek yogurt with mixed berries: 
+  - 150g Greek yogurt
+  - 1 cup mixed berries
+  Total calories: approximately 150
+
+**Pre-game Snack**
+
+- Energy-boosting bar (made from natural ingredients such as nuts, seeds, dried fruits, and honey) or a small serving of dates
+  - Alternative: banana and peanut butter toast on whole-grain bread (1 medium banana, 2 tablespoons peanut butter, 1 slice whole-grain bread)
+  Total calories: approximately 200
+
+**Post-game Recovery Meal**
+
+- Grilled salmon with sweet potato and green beans: 
+  - 120g grilled salmon
+  - 1 medium sweet potato
+  - 1 cup steamed green beans
+  - 2 tablespoons olive oil
+  Total calories: approximately 350
+
+This meal plan is tailored to provide sustained energy throughout the day, while taking into account the athlete's height, weight, and dietary goals. However, it's essential to note that individual needs may vary, and personalized recommendations should be made by a healthcare professional or registered dietitian.
+
+**Total Calories:** approximately 1850 
+**Macro Breakdown:**
+- Protein: 115g (1.8g/kg body weight)
+- Carbohydrates: 275g (4.2g/kg body weight)
+- Fat: 75g (1.1g/kg body weight)
+
+This meal plan prioritizes nutrient-dense foods, including lean proteins, complex carbohydrates, and healthy fats. It also provides essential vitamins and minerals to support overall health and performance.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The output addresses most of the criteria but fails to meet the total energy requirements, includes too high of a fat content, and lacks a water intake plan.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 180<br><b>weight:</b> 60<br><b>goal:</b> &quot;Maintain weight for optimal running performance&quot;<br><b>restrictions:</b> &quot;Vegetarian&quot;</td>
+          <td>Endurance runner needs a low-calorie meal plan to help manage weight</td>
+          <td>- 1800-2000 kcal total energy<br>- At least 3 servings of whole grains<br>- Include plant-based protein sources (lentils, tofu, tempeh)<br>- Less than 30g of fat per meal<br>- Incorporate hydrating foods (cucumbers, celery)</td>
+          <td><pre>Based on the athlete information provided, I'll generate a one-day meal plan that meets their dietary restrictions and caters to their needs. The meal plan will include a balance of protein, complex carbohydrates, and healthy fats to support optimal running performance.
+
+**Breakfast**
+
+* Oatmeal with banana and almond milk:
+ + 250g cooked oatmeal (complex carbohydrates)
+ + 1 medium banana (potassium and complex carbohydrates)
+ + 250ml almond milk (low-fat and plant-based protein)
+Total calories: approximately 400-500
+
+**Mid-Morning Snack**
+
+* Apple slices with cashew butter:
+ + 1 medium apple (complex carbohydrates and antioxidants)
+ + 2 tablespoons cashew butter (healthy fats and plant-based protein)
+Total calories: approximately 150-200
+
+**Lunch**
+
+* Veggie wrap with hummus and avocado:
+ + Whole wheat tortilla (complex carbohydrates)
+ + 1/4 cup cooked black beans (plant-based protein)
+ + 2 tablespoons hummus (healthy fats and plant-based protein)
+ + 1/2 medium avocado (healthy fats and complex carbohydrates)
+ + Mixed greens salad with cucumber, bell peppers, and carrots (complex carbohydrates and vitamins)
+Total calories: approximately 600-700
+
+**Pre-Run Snack (1-2 hours before running)**
+
+* Banana with peanut butter:
+ + 1 medium banana (complex carbohydrates and potassium)
+ + 2 tablespoons peanut butter (healthy fats and plant-based protein)
+Total calories: approximately 200-250
+
+**Post-Run Snack (within 30-60 minutes after running)**
+
+* Chocolate protein smoothie:
+ + 200ml almond milk (low-fat and plant-based protein)
+ + 1 scoop vegetarian protein powder (plant-based protein)
+ + 1 tablespoon almond butter (healthy fats)
+ + 1 tablespoon honey (carbohydrate)
+Total calories: approximately 300-400
+
+**Dinner**
+
+* Grilled tofu with roasted vegetables and quinoa:
+ + 120g grilled tofu (plant-based protein)
+ + 100g cooked quinoa (complex carbohydrates)
+ + 1 cup mixed roasted vegetables (broccoli, carrots, bell peppers) (complex carbohydrates and vitamins)
+Total calories: approximately 600-700
+
+**Before Bed Snack**
+
+* Greek yogurt with berries and almonds:
+ + 150g Greek yogurt (dairy-free alternative: soy yogurt or coconut yogurt)
+ + 1/2 cup mixed berries (antioxidants and carbohydrates)
+ + 1 ounce almonds (healthy fats and plant-based protein)
+Total calories: approximately 150-200
+
+Total daily calories: approximately 2500-3100
+
+This meal plan provides a balance of macronutrients and a variety of whole foods to support the athlete's dietary restrictions and performance goals. However, it's essential to consult with a registered dietitian or a healthcare professional to ensure the meal plan meets the athlete's individual needs and preferences.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The meal plan provided by the AI does not meet the daily calorie requirement of 1800-2000 kcal and it's very close to the criteria of macronutrient breakdown, meals with exact foods, portions, and timing but falls short on the specified daily calorie intake so it's not perfect.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 185<br><b>weight:</b> 100<br><b>goal:</b> &quot;Optimize muscle recovery after a powerlifting competition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Powerlifter requires a high-protein meal plan to aid muscle recovery</td>
+          <td>- 3500-4000 kcal total energy<br>- At least 5 servings of lean protein sources (chicken, fish, beef)<br>- Include complex carbohydrates (brown rice, whole wheat)<br>- Less than 40g of fat per meal<br>- Hydrate with a post-workout supplement</td>
+          <td><pre>Based on the athlete's goal to optimize muscle recovery after a powerlifting competition, I'll create a one-day meal plan that includes a balance of protein, complex carbohydrates, and healthy fats. Since the dietary restrictions are not specified, I'll provide a general meal plan that caters to most common dietary restrictions such as gluten-free, lactose-free, etc. However, please note that you may need to adjust this plan according to the athlete's specific needs.
+
+**Meal Plan:**
+
+**Breakfast**
+
+- 3 whole eggs (18g protein, 180 calories)
+- 2 egg whites (14g protein, 140 calories)
+- 2 slices of whole grain toast (80 calories, 2g protein)
+- 1 banana (100 calories, 2g protein)
+
+Total Calories: 420
+Total Protein: 34g
+
+**Mid-Morning Snack**
+
+- 1 scoop of whey protein powder (30g protein, 150 calories)
+- 1 cup of unsweetened almond milk (30 calories, 1g protein)
+- 1 tablespoon of almond butter (100 calories, 2g protein)
+
+Total Calories: 280
+Total Protein: 33g
+
+**Lunch**
+
+- 6 oz grilled chicken breast (40g protein, 180 calories)
+- 1 cup of cooked quinoa (150 calories, 4g protein)
+- 1 cup of steamed broccoli (55 calories, 2g protein)
+- 1 tablespoon of olive oil (120 calories, 0g protein)
+
+Total Calories: 505
+Total Protein: 46g
+
+**Mid-Afternoon Snack**
+
+- 1 medium apple (95 calories, 0.3g protein)
+- 2 tablespoons of almond butter (140 calories, 4g protein)
+
+Total Calories: 235
+Total Protein: 4g
+
+**Dinner**
+
+- 6 oz grilled salmon (40g protein, 210 calories)
+- 1 cup of cooked brown rice (110 calories, 2g protein)
+- 1 cup of steamed asparagus (25 calories, 2g protein)
+- 1 tablespoon of olive oil (120 calories, 0g protein)
+
+Total Calories: 465
+Total Protein: 44g
+
+**Total Daily Calories**: 2255
+**Total Daily Protein**: 161g
+
+This meal plan provides a balanced mix of protein, complex carbohydrates, and healthy fats to support muscle recovery after a powerlifting competition. The total daily calories are approximately 2255, and the total daily protein is 161g, which is slightly above the recommended daily intake for athletes (1.2-1.6g/kg body weight).
+
+Please note that this is a general meal plan and may need to be adjusted based on the athlete's specific dietary needs and preferences. It's also essential to stay hydrated by drinking plenty of water throughout the day.
+
+**Additional Tips**
+
+* Make sure to drink at least 8-10 glasses of water throughout the day.
+* Aim to eat every 2-3 hours to maintain a positive nitrogen balance and support muscle recovery.
+* Consider adding supplements like glutamine, HMB, and creatine to support muscle recovery and growth.
+* Get at least 7-9 hours of sleep per night to aid in muscle recovery and growth.
+
+Remember to consult a sports dietitian or a healthcare professional to create a personalized meal plan that meets the athlete's specific needs and preferences.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The AI output generally meets the task description, scenario and solution criteria, but has some inaccuracies and omissions.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 175<br><b>weight:</b> 80<br><b>goal:</b> &quot;Promote overall health and well-being through nutrition&quot;<br><b>restrictions:</b> &quot;Gluten-free&quot;</td>
+          <td>Cyclist needs a balanced meal plan to improve overall health</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of whole grains (gluten-free options)<br>- Include a variety of fruits and vegetables<br>- Moderate consumption of lean protein and healthy fats<br>- Drink at least 1 liter of water per hour of cycling</td>
+          <td><pre>**One-Day Gluten-Free Meal Plan for the Athlete**
+
+**Breakfast**
+
+- **Gluten-Free Banana Pancakes**
+  - 2 ripe bananas
+  - Gluten-free flour blend (1 cup)
+  - 1 large egg
+  - 1/4 cup almond milk
+  - 1 tsp vanilla extract
+  - Pinch of salt
+  - Cooking oil or non-stick cooking spray
+
+Combine all ingredients, cook on a non-stick pan. (300 calories, 35g carbs, 5g fat, 5g protein)
+
+**Mid-Morning Snack**
+
+- **Apple and Almond Butter**
+  - 1 medium-sized apple, sliced
+  - 2 tbsp almond butter
+
+Combine sliced apple and almond butter for a healthy snack. (150 calories, 15g carbs, 8g fat, 2g protein)
+
+**Lunch**
+
+- **Grilled Chicken and Vegetables**
+  - 120g grilled chicken breast
+  - 1 cup mixed vegetables ( bell peppers, carrots, broccoli)
+  - Quinoa (1/2 cup uncooked)
+  - 2 tbsp gluten-free soy sauce
+
+Grill the chicken breast and steam the vegetables. Cook quinoa and mix with gluten-free soy sauce for the base of the meal. (400 calories, 30g carbs, 20g fat, 35g protein)
+
+**Mid-Afternoon Snack**
+
+- **Cottage Cheese and Fresh Berries**
+  - 1 cup cottage cheese
+  - 1 cup fresh berries
+
+Combine cottage cheese and fresh berries for a protein-rich snack. (150 calories, 15g carbs, 5g fat, 20g protein)
+
+**Dinner**
+
+- **Baked Salmon and Sweet Potatoes**
+  - 120g baked salmon
+  - 1 medium-sized sweet potato
+  - Green beans (1 cup)
+
+Bake salmon and sweet potato in the oven with a drizzle of olive oil. Steam green beans for a well-rounded meal. (400 calories, 30g carbs, 20g fat, 35g protein)
+
+**Total Calories for the Day: 1,800 calories**
+**Total Protein for the Day: 102g**
+**Total Fat for the Day: 73g**
+**Total Carbohydrates for the Day: 155g**
+
+This meal plan meets the athlete's dietary restrictions of being gluten-free while promoting overall health and well-being through nutrition. However, the calorie and macronutrient requirements may need to be adjusted based on the athlete's specific needs. Consult a registered dietitian or healthcare professional for personalized recommendations.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The output provides a gluten-free meal plan with moderate consumption of lean protein and healthy fats, variety of fruits and vegetables, and includes daily caloric information, but it does not meet the exact calorie requirement of 2500-2800 kcal, and does not explicitly include 3 servings of whole grains or meet the water intake requirement.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 165<br><b>weight:</b> 55<br><b>goal:</b> &quot;Optimize performance under time constraints&quot;<br><b>restrictions:</b> &quot;Lactose intolerance&quot;</td>
+          <td>Triathlete requires a specialized meal plan to accommodate a food intolerance</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 3 servings of complex carbohydrates<br>- Include lactose-free protein sources (rice protein, eggs)<br>- Moderate consumption of healthy fats<br>- Stay hydrated with electrolyte-rich beverages</td>
+          <td><pre>Based on the provided information, here's a one-day meal plan for the athlete:
+
+**Breakfast**
+
+* Oatmeal with banana and almond milk (250 calories, 4g protein)
+  - 1/2 cup cooked oatmeal
+  - 1 medium banana, sliced
+  - 1 cup almond milk (lactose-free)
+
+**Mid-Morning Snack**
+
+* Fresh fruit and nut mix (150 calories, 2g protein)
+  - 1 medium apple, sliced
+  - 1 tablespoon chopped almonds
+  - 1/2 cup berries (such as strawberries, blueberries, or raspberries)
+
+**Lunch**
+
+* Grilled chicken breast with quinoa and steamed vegetables (400 calories, 35g protein)
+  - 4 oz grilled chicken breast
+  - 1 cup cooked quinoa
+  - 1 cup mixed steamed vegetables (such as broccoli, carrots, and bell peppers)
+
+**Mid-Afternoon Snack**
+
+* Protein smoothie with almond milk and banana (200 calories, 10g protein)
+  - 1 scoop lactose-free protein powder
+  - 1/2 cup almond milk
+  - 1 medium banana
+  - 1 tablespoon almond butter
+
+**Pre-Performance Snack (2 hours before training/competition)**
+
+* Honey graham crackers and peanut butter (150 calories, 4g protein)
+  - 2 honey graham crackers
+  - 2 tablespoons peanut butter
+
+**Post-Performance Snack (30-60 minutes after training/competition)**
+
+* Recovery smoothie with almond milk, banana, and protein powder (300 calories, 20g protein)
+  - 1 scoop lactose-free protein powder
+  - 1/2 cup almond milk
+  - 1 medium banana
+  - 1 tablespoon almond butter
+
+This meal plan provides approximately 1800 calories, 55g of protein, and meets the athlete's dietary restrictions. It's essential to note that everyone's nutritional needs are different, and this plan may need to be adjusted based on individual requirements. It's also crucial to consult a sports dietitian or a qualified healthcare professional for personalized recommendations.
+
+**Hydration Plan**
+
+* Drink at least 8 cups (64 ounces) of water throughout the day.
+* Monitor urine output to ensure it's pale yellow or clear, indicating proper hydration.
+
+**Timing**
+
+* Eat meals and snacks 1-2 hours before training or competition to allow for proper digestion.
+* Consume post-performance snacks within 30-60 minutes after training or competition to aid in recovery.
+
+**Performance-Optimizing Tips**
+
+* Listen to your body and adjust the meal plan as needed based on how you feel before, during, and after training or competition.
+* Practice fueling and hydrating strategies during training sessions to optimize performance.
+* Aim for a consistent sleep schedule and aim for 7-9 hours of sleep per night to support overall recovery and performance.
+
+This meal plan is designed to provide a balanced and lactose-free diet that addresses the athlete's nutritional needs while considering their dietary restrictions. However, everyone's requirements are unique, and it's crucial to consult with a qualified professional for personalized recommendations.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The output provides a daily meal plan with lactose-free protein sources, meeting 4 out of the 5 criteria. While it estimates the caloric total and meal breakdown, it falls short on meeting the specific caloric range and macronutrient breakdown.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 190<br><b>weight:</b> 90<br><b>goal:</b> &quot;Support muscle maintenance during a calorie deficit&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Swimmer aims to maintain muscle mass while in a calorie deficit</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 4 servings of lean protein sources<br>- Include complex carbohydrates to support muscle function<br>- Less than 30g of fat per meal<br>- Incorporate strength training exercises</td>
+          <td><pre>Based on the athlete information provided, I will create a one-day meal plan that meets their dietary restrictions and goals of maintaining muscle during a calorie deficit.
+
+**Assumptions:**
+
+- The athlete is male, as the given height and weight are consistent with typical male athlete profiles.
+- No specific dietary restrictions are mentioned, so I will assume the athlete can consume a balanced mix of protein, carbohydrates, and healthy fats.
+- The athlete requires a calorie deficit, which means consuming fewer calories than their daily maintenance calories. I will calculate these based on the athlete's height, weight, and a moderate-intensity activity level.
+
+**Daily Maintenance Calories:** (For an athlete of 190 cm height, 90 kg weight, with moderate activity level)
+- Estimated Daily Energy Expenditure (EDEE): 2500-2800 calories
+- I will aim for a calorie deficit of 10-20% (250-560 calories), resulting in a calorie intake of 2200-2240 calories.
+
+**Meal Plan:**
+
+**Breakfast**
+
+- 3 whole eggs (180 calories, 18g protein, 12g fat, 1g carbs)
+- 2 egg whites (140 calories, 28g protein, 0g fat, 0g carbs)
+- 1 scoop whey protein (120 calories, 25g protein, 0g fat, 0g carbs)
+- 1 slice whole-wheat toast (89 calories, 4g protein, 1g fat, 16g carbs)
+- 1 cup mixed berries (60 calories, 1g protein, 1g fat, 15g carbs)
+
+Total Calories: 489
+Total Protein: 76g
+Total Fat: 14g
+Total Carbohydrates: 32g
+
+**Mid-morning Snack**
+
+- 1 small apple (95 calories, 0g protein, 0g fat, 25g carbs)
+- 1 tablespoon almond butter (100 calories, 2g protein, 8g fat, 4g carbs)
+
+Total Calories: 195
+Total Protein: 2g
+Total Fat: 8g
+Total Carbohydrates: 29g
+
+**Lunch**
+
+- 4 oz grilled chicken breast (120 calories, 30g protein, 3g fat, 0g carbs)
+- 1 cup cooked quinoa (150 calories, 4g protein, 2g fat, 30g carbs)
+- 1 cup steamed broccoli (55 calories, 2g protein, 0g fat, 11g carbs)
+
+Total Calories: 325
+Total Protein: 36g
+Total Fat: 5g
+Total Carbohydrates: 41g
+
+**Mid-afternoon Snack**
+
+- 1 small pear (62 calories, 0g protein, 0g fat, 17g carbs)
+- 1 scoop whey protein (120 calories, 25g protein, 0g fat, 0g carbs)
+
+Total Calories: 182
+Total Protein: 25g
+Total Fat: 0g
+Total Carbohydrates: 17g
+
+**Dinner**
+
+- 4 oz grilled salmon (180 calories, 35g protein, 10g fat, 0g carbs)
+- 1 cup cooked brown rice (110 calories, 2g protein, 1g fat, 25g carbs)
+- 1 cup steamed green beans (55 calories, 2g protein, 0g fat, 11g carbs)
+
+Total Calories: 345
+Total Protein: 39g
+Total Fat: 11g
+Total Carbohydrates: 36g
+
+**Total Daily Intake**
+
+Total Calories: 2137
+Total Protein: 164g
+Total Fat: 49g
+Total Carbohydrates: 155g
+
+This meal plan provides the athlete with a balanced mix of protein, carbohydrates, and healthy fats, while maintaining a calorie deficit. It is essential for the athlete to monitor their progress and adjust the calorie intake and macronutrient ratios as needed to achieve their goals.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">10.0</span></td>
+          <td>The output perfectly addresses the task, scenario, and criteria, providing a well-balanced meal plan that meets all the requirements.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 160<br><b>weight:</b> 45<br><b>goal:</b> &quot;Maintain energy levels throughout a long rehearsal day&quot;<br><b>restrictions:</b> &quot;Vegan&quot;</td>
+          <td>Dancer needs a high-fiber meal plan to manage energy levels</td>
+          <td>- 2200-2500 kcal total energy<br>- At least 5 servings of whole grains<br>- Include plant-based sources of omega-3 fatty acids (flaxseeds, walnuts)<br>- Moderate consumption of healthy fats<br>- Incorporate probiotic-rich foods (yogurt alternatives)</td>
+          <td><pre>**One-Day Meal Plan for the Athlete**
+
+Considering the athlete's height, weight, and goal, a balanced meal plan that meets their dietary restrictions (vegan) is essential to maintain energy levels throughout the day. Here's a suggested meal plan:
+
+### Breakfast
+
+- **Oatmeal with Fresh Fruits and Nuts**: 1 cup cooked oatmeal, 1/2 cup mixed berries, 1 tablespoon almond butter, 1 handful of chopped walnuts, and 1 tablespoon maple syrup.
+  - Calories: 400
+  - Carbohydrates: 60g
+  - Protein: 10g
+  - Fat: 20g
+
+### Mid-Morning Snack
+
+- **Apple with Almond Butter**: 1 medium apple, sliced, and 2 tablespoons almond butter.
+  - Calories: 190
+  - Carbohydrates: 20g
+  - Protein: 4g
+  - Fat: 16g
+
+### Lunch
+
+- **Vegan Wrap**: 1 whole wheat wrap, 2 cups mixed greens, 1/2 cup cooked brown rice, 1/4 cup black beans, 1/4 cup roasted vegetables (bell peppers, cucumber, carrots), and a drizzle of hummus.
+  - Calories: 550
+  - Carbohydrates: 100g
+  - Protein: 15g
+  - Fat: 20g
+
+### Mid-Day Snack
+
+- **Banana Energy Smoothie**: 1 medium banana, 1 cup almond milk, 1 scoop vegan protein powder, 1 tablespoon almond butter, and 1 teaspoon honey.
+  - Calories: 350
+  - Carbohydrates: 50g
+  - Protein: 25g
+  - Fat: 20g
+
+### Dinner
+
+- **Lentil Soup**: 2 cups cooked lentil soup, 2 cups mixed greens salad with 1 tablespoon olive oil and 1 tablespoon lemon juice.
+  - Calories: 600
+  - Carbohydrates: 100g
+  - Protein: 25g
+  - Fat: 30g
+
+### Pre-Rehearsal Snack
+
+- **Energy Balls**: 2-3 energy balls made from 1 cup rolled oats, 1/2 cup nut butter, 1/4 cup maple syrup, and 1/4 cup chopped nuts.
+  - Calories: 250
+  - Carbohydrates: 30g
+  - Protein: 10g
+  - Fat: 20g
+
+### Post-Rehearsal Snack (optional)
+
+- **Chocolate Banana Bites**: 2-3 bites made from 1 medium banana, 2 tablespoons almond butter, and 1 tablespoon cocoa powder.
+  - Calories: 160
+  - Carbohydrates: 30g
+  - Protein: 4g
+  - Fat: 16g
+
+**Hydration**
+
+* Aim for at least 8-10 glasses of water throughout the day.
+* Consider adding coconut water or sports drinks to your hydration plan for replenishing electrolytes.
+
+This meal plan is designed to provide a balance of macronutrients to support energy levels throughout the day. Feel free to adjust portion sizes based on individual needs.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">9.0</span></td>
+          <td>The AI output provides a detailed meal plan that meets most of the solution criteria, including a balanced mix of macronutrients, whole grains, and plant-based sources of omega-3 fatty acids, but it does not explicitly mention the daily caloric total and macronutrient breakdown in the output summary.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 72<br><b>goal:</b> &quot;Optimize bone health through nutrition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Gymnast requires a meal plan to support bone health during intense training</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of calcium-rich foods (dairy, fortified plant-based milk)<br>- Include vitamin D-fortified foods (fortified orange juice, mushrooms)<br>- Moderate consumption of healthy fats<br>- Engage in weight-bearing exercises 2-3 times a week</td>
+          <td><pre>**Assuming no dietary restrictions were mentioned, I'll make an educated guess based on general athlete dietary needs**
+
+Based on the athlete's height (170 cm) and weight (72 kg), a balanced meal plan will include a mix of protein, carbohydrates, and healthy fats to support muscle growth, energy needs, and bone health.
+
+**Dietary Goals: Optimize bone health through nutrition**
+
+To optimize bone health, the meal plan will emphasize calcium-rich foods, vitamin D-rich foods, and omega-3 fatty acids, which are essential for bone health.
+
+**One-day meal plan:**
+
+**Breakfast**
+
+* 2 whole eggs (140 calories, 12g protein, 10g fat)
+* 1 cup nonfat milk (80 calories, 8g protein, 0g fat)
+* 1 cup cooked oatmeal with sliced banana (300 calories, 5g protein, 4g fat)
+* 1 tablespoon almond butter (100 calories, 2g protein, 8g fat)
+
+Total Calories: 620
+Total Protein: 27g
+Total Fat: 22g
+
+**Mid-morning Snack**
+
+* 1 small apple (95 calories, 0.3g protein, 0.3g fat)
+* 1 tablespoon peanut butter (95 calories, 4g protein, 8g fat)
+
+Total Calories: 190
+Total Protein: 4g
+Total Fat: 8g
+
+**Lunch**
+
+* Grilled chicken breast (120g, 120 calories, 25g protein, 3g fat)
+* 1 cup cooked quinoa (150 calories, 4g protein, 2g fat)
+* 1 cup steamed broccoli (55 calories, 2g protein, 0.5g fat)
+* 1 tablespoon olive oil (120 calories, 0g protein, 14g fat)
+
+Total Calories: 445
+Total Protein: 31g
+Total Fat: 19.5g
+
+**Pre-Workout Snack**
+
+* 1 scoop whey protein powder (120 calories, 25g protein, 0g fat)
+* 1 cup coconut water (45 calories, 1g protein, 0g fat)
+
+Total Calories: 165
+Total Protein: 26g
+Total Fat: 0g
+
+**Dinner**
+
+* Grilled salmon (120g, 180 calories, 35g protein, 10g fat)
+* 1 cup cooked brown rice (110 calories, 2g protein, 1g fat)
+* 1 cup sautéed spinach (20 calories, 3g protein, 0g fat)
+* 1 tablespoon olive oil (120 calories, 0g protein, 14g fat)
+
+Total Calories: 430
+Total Protein: 40g
+Total Fat: 25g
+
+**Post-Workout Snack**
+
+* 1 scoop casein protein powder (120 calories, 20g protein, 0g fat)
+* 1 cup almond milk (60 calories, 1g protein, 0g fat)
+* 1 tablespoon almond butter (100 calories, 2g protein, 8g fat)
+
+Total Calories: 280
+Total Protein: 23g
+Total Fat: 8g
+
+**Total Daily Intake:**
+
+* Calories: 2450
+* Protein: 151g
+* Fat: 102g
+
+This meal plan provides a balanced mix of protein, carbohydrates, and healthy fats to support muscle growth, energy needs, and bone health. It also includes a variety of calcium-rich foods, vitamin D-rich foods, and omega-3 fatty acids to optimize bone health.
+
+**Dietary Restrictions: Not Specified**
+
+Please let me know if there are specific dietary restrictions (e.g. vegetarian, gluten-free, dairy-free) that need to be taken into account when creating a personalized meal plan.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The output addresses the main scenario of a gymnast requiring a meal plan for bone health but fails to explicitly include vitamin D-rich foods, falls short of the recommended total energy, and lacks specific restrictions.</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
