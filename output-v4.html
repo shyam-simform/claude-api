@@ -1,0 +1,684 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prompt Evaluation Report</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #ececec; margin: 0; padding: 32px; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 24px; }
+  .cards { display: flex; gap: 16px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 6px; padding: 16px 24px; flex: 1; }
+  .card .label { font-size: 13px; color: #57606a; margin-bottom: 8px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th { background: #24292f; color: #fff; text-align: left; padding: 10px 12px; font-size: 13px; }
+  td { padding: 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; font-size: 13px; }
+  pre { white-space: pre-wrap; font-family: inherit; margin: 0; background: #f6f8fa; padding: 8px; border-radius: 4px; }
+  .score-badge { display: inline-block; min-width: 24px; text-align: center; color: #fff; border-radius: 4px; padding: 2px 8px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Prompt Evaluation Report</h1>
+  <div class="cards">
+    <div class="card"><div class="label">Total Test Cases</div><div class="value">8</div></div>
+    <div class="card"><div class="label">Average Score</div><div class="value">7.3 / 10</div></div>
+    <div class="card"><div class="label">Pass Rate (&ge;7)</div><div class="value">50.0%</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Prompt Inputs</th>
+        <th>Scenario</th>
+        <th>Solution Criteria</th>
+        <th>Output</th>
+        <th>Score</th>
+        <th>Reasoning</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 65<br><b>goal:</b> &quot;Gain energy for a high-intensity volleyball game&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Volleyball player wants a high-carb meal plan for the day before a game</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 4 servings of complex carbohydrates<br>- Include lean protein sources (chicken, fish, beans)<br>- Less than 50g of fat<br>- Drink at least 2 liters of water</td>
+          <td><pre>Given that you didn't specify any dietary restrictions, I'll provide a general meal plan for an athlete with no restrictions for an 170 cm (5'7&quot;) and 65 kg (143 lbs) person. Please note that if you have any specific dietary restrictions (e.g., gluten-free, dairy-free, vegetarian, etc.), I'll adjust the plan accordingly.
+
+**Meal Plan for High-Intensity Volleyball Game**
+
+The calorie goal is 2,500-3,000 calories for optimal energy, considering the athlete's height and weight.
+
+**Breakfast (800 calories, 30g protein, 15g fat, 120g carbs, eaten 2 hours before the game)**
+
+- Oatmeal with Banana and Almond Butter
+  - 200g rolled oats
+  - 1 large banana (100g)
+  - 2 tbsp almond butter (30g)
+
+**Mid-Morning Snack (300 calories, 15g protein, 8g fat, 40g carbs, eaten 1 hour after breakfast)**
+
+- Greek Yogurt with Berries and Honey
+  - 150g Greek yogurt
+  - 100g mixed berries
+  - 1 tsp honey (5g)
+
+**Lunch (500 calories, 30g protein, 20g fat, 60g carbs, eaten 3-4 hours before the game)**
+
+- Grilled Chicken Breast with Sweet Potato and Avocado
+  - 120g grilled chicken breast
+  - 100g cooked sweet potato
+  - 50g mashed avocado
+
+**Pre-Game Snack (300 calories, 15g protein, 10g fat, 40g carbs, eaten 1-2 hours before the game)**
+
+- Energy Bar (look for a budget-friendly option)
+  - 1 energy bar ( approximately 100g)
+
+**Post-Game Snack (500 calories, 25g protein, 20g fat, 60g carbs, eaten within 30-60 minutes after the game)**
+
+- Protein Shake with Banana and Chocolate Milk
+  - 1 scoop whey protein powder (30g protein, approximately 120 calories)
+  - 150g mixed berries
+  - 100g chocolate milk
+
+**Dinner (500 calories, 30g protein, 20g fat, 60g carbs, eaten 2-3 hours after the post-game snack)**
+
+- Grilled Salmon with Brown Rice and Steamed Broccoli
+  - 120g grilled salmon
+  - 100g cooked brown rice
+  - 100g steamed broccoli
+
+**Total Daily Intake**
+
+- Calories: 2,700
+- Protein: 150g
+- Fat: 83g
+- Carbohydrates: 330g
+
+Please note that this meal plan is a general suggestion and might need to be adjusted based on individual needs and preferences. Also, make sure to stay hydrated by drinking plenty of water throughout the day.
+
+Budget-friendly tips:
+- Buy in bulk: oats, sweet potatoes, brown rice
+- Choose affordable protein sources: chicken breast, salmon, Greek yogurt
+- Look for budget-friendly energy bars and protein powders</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">5.0</span></td>
+          <td>The output meets most criteria, but there are issues with caloric range, fat content, and meal timing.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 180<br><b>weight:</b> 60<br><b>goal:</b> &quot;Maintain weight for optimal running performance&quot;<br><b>restrictions:</b> &quot;Vegetarian&quot;</td>
+          <td>Endurance runner needs a low-calorie meal plan to help manage weight</td>
+          <td>- 1800-2000 kcal total energy<br>- At least 3 servings of whole grains<br>- Include plant-based protein sources (lentils, tofu, tempeh)<br>- Less than 30g of fat per meal<br>- Incorporate hydrating foods (cucumbers, celery)</td>
+          <td><pre>**Athlete's Daily Meal Plan**
+
+**Height:** 180 cm
+**Weight:** 60 kg
+**Goal:** Maintain weight for optimal running performance
+**Dietary restrictions:** Vegetarian
+
+**Daily Calorie Intake:** 2000 calories (approximate)
+To maintain weight, the athlete needs to consume a balanced diet with the optimal macronutrient ratio.
+
+**Meal Plan:**
+
+### **Breakfast (7:00 AM)**
+
+* 2 whole wheat toast slices (30g, 120 calories, 3g protein, 1g fat, 25g carbs)
+* 1 cup cooked oatmeal (180g, 300 calories, 5g protein, 5g fat, 60g carbs)
+* 1 banana (100g, 100 calories, 1g protein, 0.5g fat, 25g carbs)
+* 1 cup fortified almond milk (240ml, 60 calories, 1g protein, 2g fat, 8g carbs)
+
+Total: 660 calories, 10g protein, 8.5g fat, 118g carbs
+
+### **Mid-morning Snack (10:00 AM)**
+
+* 1 small apple (57g, 45 calories, 0.3g protein, 0.1g fat, 12g carbs)
+* 1 tablespoon almond butter (14g, 100 calories, 2g protein, 9g fat, 4g carbs)
+
+Total: 145 calories, 2.3g protein, 8.1g fat, 16g carbs
+
+### **Lunch (1:00 PM)**
+
+* 2 slices whole wheat pita bread (30g, 120 calories, 4g protein, 1g fat, 25g carbs)
+* 2 tablespoons hummus (30g, 100 calories, 2g protein, 10g fat, 6g carbs)
+* 1 cup cooked lentils (185g, 230 calories, 18g protein, 0.9g fat, 40g carbs)
+* 1 cup mixed greens salad (20g, 20 calories, 1g protein, 0.1g fat, 4g carbs) with 1 tablespoon olive oil (15g, 120 calories, 0g protein, 14g fat, 0g carbs)
+
+Total: 590 calories, 25.1g protein, 25.2g fat, 75g carbs
+
+### **Mid-afternoon Snack (4:00 PM)**
+
+* 1 cup Greek yogurt (240g, 100 calories, 15g protein, 0g fat, 20g carbs)
+* 1 cup berries (130g, 60 calories, 1g protein, 0.5g fat, 15g carbs)
+
+Total: 160 calories, 16g protein, 0.5g fat, 35g carbs
+
+### **Dinner (7:00 PM)**
+
+* 2 cups cooked quinoa (300g, 300 calories, 8g protein, 4g fat, 60g carbs)
+* 1 cup cooked chickpeas (160g, 200 calories, 15g protein, 1g fat, 30g carbs)
+* 1 cup steamed broccoli (55g, 55 calories, 2g protein, 0.1g fat, 11g carbs)
+* 1 tablespoon olive oil (15g, 120 calories, 0g protein, 14g fat, 0g carbs)
+
+Total: 675 calories, 25g protein, 19.2g fat, 81g carbs
+
+**Daily totals:**
+
+* Calories: 1995
+* Protein: 93g
+* Fat: 78.9g
+* Carbs: 324g
+
+**Recommended adjustments:**
+
+* Consider adding more protein-rich sources like legumes, beans, and whole grains at lunch and dinner.
+* Increase whole grains in the diet to provide more complex carbohydrates.
+
+**Budget-friendly suggestions:**
+
+* Opt for store-brand or generic products for similar prices.
+* Consider purchasing seasonal fruits and vegetables to save money.
+* Plan meals around affordable protein sources like beans, lentils, and chickpeas.
+
+This meal plan provides a well-balanced mix of macronutrients while respecting the athlete's dietary restrictions and goals. The daily calorie and macronutrient amounts should support maintaining weight and optimize running performance.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">10.0</span></td>
+          <td>The output meets all the task, scenario, and solution criteria, and provides a complete meal plan with daily totals and suggested adjustments.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 185<br><b>weight:</b> 100<br><b>goal:</b> &quot;Optimize muscle recovery after a powerlifting competition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Powerlifter requires a high-protein meal plan to aid muscle recovery</td>
+          <td>- 3500-4000 kcal total energy<br>- At least 5 servings of lean protein sources (chicken, fish, beef)<br>- Include complex carbohydrates (brown rice, whole wheat)<br>- Less than 40g of fat per meal<br>- Hydrate with a post-workout supplement</td>
+          <td><pre>To create a meal plan, I'll need to know the athlete's dietary restrictions. Please specify any allergies, intolerances, or preferences (e.g., vegetarian, gluten-free, dairy-free, etc.).
+
+Assuming the athlete has no specific dietary restrictions, I'll create a general meal plan.
+
+For a 35-year-old athlete, 185 cm (6 ft 1 in) and 100 kg (220 lbs), with a powerlifting competition in mind, the daily calorie intake should be around 2800-3000 calories.
+
+Here's a sample meal plan:
+
+**Breakfast (within 1-2 hours after waking up)**
+
+- 3 whole eggs (180g, 15, 12g, 10g, respectively)
+- 1 cup cooked oatmeal (100g, 2g, 2g, 40g)
+- 1 cup mixed berries (100g, 2g, 1g, 25g)
+- 1 banana (100g, 1g, 0g, 25g)
+
+Total: 380 calories, 18g protein, 13g fat, 101g carbs
+
+**Mid-morning Snack (1-2 hours after breakfast)**
+
+- 1 cup Greek yogurt (200g, 20g, 0g, 30g)
+- 1 scoop whey protein (50g, 30g, 0g, 0g)
+- 1/2 cup mixed nuts (50g, 5g, 17g, 10g)
+
+Total: 250 calories, 55g protein, 17g fat, 40g carbs
+
+**Lunch (2-3 hours after snack)**
+
+- 4 oz grilled chicken breast (115g, 30g, 4g, 0g)
+- 1 cup cooked brown rice (150g, 2g, 1g, 45g)
+- 1 cup steamed broccoli (55g, 2g, 0g, 5g)
+
+Total: 400 calories, 34g protein, 5g fat, 50g carbs
+
+**Pre-Workout Snack (1-2 hours before training session)**
+
+- 1 medium apple (150g, 0g, 0g, 35g)
+- 2 tablespoons almond butter (30g, 2g, 16g, 2g)
+
+Total: 130 calories, 2g protein, 16g fat, 37g carbs
+
+**Post-Workout Snack (within 30-60 minutes after training session)**
+
+- 1 scoop whey protein (50g, 30g, 0g, 0g)
+- 1 cup milk (240g, 15g, 10g, 33g)
+- 1 cup mixed berries (100g, 2g, 1g, 25g)
+
+Total: 290 calories, 47g protein, 11g fat, 58g carbs
+
+**Dinner (3-4 hours after workout)**
+
+- 6 oz grilled salmon (170g, 35g, 10g, 0g)
+- 1 cup cooked quinoa (150g, 4g, 2g, 45g)
+- 1 cup steamed asparagus (55g, 2g, 0g, 5g)
+
+Total: 390 calories, 41g protein, 12g fat, 50g carbs
+
+**Before Bedtime Snack (1-2 hours before sleep)**
+
+- 1 cup cottage cheese (200g, 28g, 1g, 5g)
+- 1 scoop casein protein (50g, 20g, 0g, 0g)
+
+Total: 200 calories, 48g protein, 1g fat, 5g carbs
+
+Total Daily Intake:
+
+2750 calories
+145g protein
+74g fat
+406g carbs
+
+This meal plan provides a balanced mix of protein, carbohydrates, and healthy fats to support muscle recovery and growth. Adjust portion sizes based on individual needs and preferences.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The AI output partially addresses the task but fails to meet some of the key criteria, providing an incorrect daily caloric total (2750 kcal) and not meeting the daily fat limit of less than 40g per meal</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 175<br><b>weight:</b> 80<br><b>goal:</b> &quot;Promote overall health and well-being through nutrition&quot;<br><b>restrictions:</b> &quot;Gluten-free&quot;</td>
+          <td>Cyclist needs a balanced meal plan to improve overall health</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of whole grains (gluten-free options)<br>- Include a variety of fruits and vegetables<br>- Moderate consumption of lean protein and healthy fats<br>- Drink at least 1 liter of water per hour of cycling</td>
+          <td><pre>**Meal Plan for Athlete (Gluten-free)**
+
+**Assumptions:**
+- The athlete is a moderate to high-intensity athlete, consuming approximately 2500 calories per day.
+- The goal is to provide a balanced meal plan promoting overall health and well-being.
+- Portion sizes are based on average serving sizes, adjusted for athletic needs.
+
+**Breakfast (700 calories, 40g protein, 20g fat, 80g carbs)**
+
+- 3 whole eggs (180 calories, 18g protein, 12g fat, 1g carbs)
+- 1 cup cooked oatmeal (150 calories, 3g protein, 2g fat, 30g carbs)
+- 1 cup mixed berries (60 calories, 1g protein, 1g fat, 15g carbs)
+- 1/2 cup sliced banana (75 calories, 1g protein, 0g fat, 20g carbs)
+
+**Mid-Morning Snack (300 calories, 20g protein, 10g fat, 20g carbs)**
+
+- 1 scoop whey protein powder (120 calories, 25g protein, 1g fat, 0g carbs)
+- 1/2 cup unsweetened almond milk (30 calories, 1g protein, 3g fat, 1g carbs)
+- 1 medium apple (95 calories, 0g protein, 0g fat, 25g carbs)
+
+**Lunch (700 calories, 40g protein, 25g fat, 60g carbs)**
+
+- 6 oz grilled chicken breast (180 calories, 35g protein, 3g fat, 0g carbs)
+- 1 cup cooked quinoa (150 calories, 4g protein, 2g fat, 30g carbs)
+- 1 cup steamed broccoli (55 calories, 2g protein, 0g fat, 10g carbs)
+- 1/4 cup sliced avocado (100 calories, 1g protein, 10g fat, 2g carbs)
+
+**Pre-Workout Snack (400 calories, 25g protein, 20g fat, 20g carbs)**
+
+- 1 scoop whey protein powder (120 calories, 25g protein, 1g fat, 0g carbs)
+- 1/2 cup mixed nuts (170 calories, 4g protein, 16g fat, 4g carbs)
+- 1/2 cup dried dates (100 calories, 2g protein, 0g fat, 25g carbs)
+
+**Post-Workout Snack (400 calories, 30g protein, 20g fat, 30g carbs)**
+
+- 1 scoop casein protein powder (120 calories, 20g protein, 1g fat, 0g carbs)
+- 1 cup Greek yogurt (150 calories, 20g protein, 0g fat, 30g carbs)
+- 1/2 cup mixed berries (60 calories, 1g protein, 1g fat, 15g carbs)
+
+**Dinner (700 calories, 40g protein, 25g fat, 60g carbs)**
+
+- 6 oz grilled salmon (210 calories, 35g protein, 10g fat, 0g carbs)
+- 1 cup cooked sweet potato (140 calories, 2g protein, 0g fat, 30g carbs)
+- 1 cup steamed green beans (55 calories, 2g protein, 0g fat, 10g carbs)
+- 1/4 cup sliced almonds (100 calories, 2g protein, 10g fat, 4g carbs)
+
+**Tips:**
+- Stay hydrated by drinking at least 8-10 glasses of water per day.
+- Adjust portion sizes based on individual needs.
+- Incorporate a variety of fruits and vegetables to ensure adequate vitamins and minerals.
+- Replace quinoa with brown rice or other gluten-free grains if desired.
+- Choose budget-friendly options such as store-bought gluten-free oatmeal, mixed nuts, and dried fruits.
+
+**Total Daily Intake:**
+- Calories: 2500
+- Protein: 170g
+- Fat: 115g
+- Carbohydrates: 280g</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">9.0</span></td>
+          <td>The output meets all the stated criteria, but some minor adjustments would make it even more suitable for the cyclist.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 165<br><b>weight:</b> 55<br><b>goal:</b> &quot;Optimize performance under time constraints&quot;<br><b>restrictions:</b> &quot;Lactose intolerance&quot;</td>
+          <td>Triathlete requires a specialized meal plan to accommodate a food intolerance</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 3 servings of complex carbohydrates<br>- Include lactose-free protein sources (rice protein, eggs)<br>- Moderate consumption of healthy fats<br>- Stay hydrated with electrolyte-rich beverages</td>
+          <td><pre>**Athlete's One-Day Meal Plan**
+
+**Profile:**
+
+- Height: 165 cm
+- Weight: 55 kg
+- Age: (Assumed) 25-30 years
+- Activity Level: Moderate to High
+- Goal: Optimize performance under time constraints
+- Dietary Restrictions: Lactose Intolerance
+
+**Daily Caloric Needs:**
+
+- For athletes, the recommended daily caloric intake is typically higher than the general population. Using the Mifflin-St Jeor equation, I calculate the basal metabolic rate as 1,840 calories. Adding 500 calories for moderate exercise, the total daily energy expenditure (TDEE) is approximately 2,340 calories. To optimize performance under time constraints, we'll aim for a slightly higher caloric intake of 2,500 calories.
+
+**Meal Plan:**
+
+**Breakfast (7:00 AM)**
+
+- **Oatmeal with Banana and Almond Butter**:
+  - 250g cooked oatmeal (250 calories, 4g protein, 20g fat, 50g carbs)
+  - 1 medium banana (100 calories, 1g protein, 0g fat, 25g carbs)
+  - 20g almond butter (100 calories, 2g protein, 8g fat, 2g carbs)
+
+Total Calories: 450
+Total Protein: 7g
+Total Fat: 28g
+Total Carbs: 77g
+
+**Mid-Morning Snack (10:00 AM)**
+
+- **Apple Slices with Peanut Butter**:
+  - 1 medium apple, sliced (50 calories, 0g protein, 0g fat, 15g carbs)
+  - 20g peanut butter (100 calories, 4g protein, 8g fat, 8g carbs)
+
+Total Calories: 150
+Total Protein: 4g
+Total Fat: 8g
+Total Carbs: 23g
+
+**Lunch (1:00 PM)**
+
+- **Grilled Chicken and Quinoa Bowl**:
+  - 120g grilled chicken breast (120 calories, 25g protein, 3g fat, 0g carbs)
+  - 100g cooked quinoa (150 calories, 4g protein, 2g fat, 30g carbs)
+  - 50g steamed broccoli (25 calories, 2g protein, 0g fat, 5g carbs)
+
+Total Calories: 295
+Total Protein: 31g
+Total Fat: 5g
+Total Carbs: 35g
+
+**Mid-Afternoon Snack (4:00 PM)**
+
+- **Rice Cakes with Almond Butter and Banana Slices**:
+  - 2 rice cakes (100 calories, 2g protein, 2g fat, 20g carbs)
+  - 20g almond butter (100 calories, 2g protein, 8g fat, 2g carbs)
+  - 1 medium banana (100 calories, 1g protein, 0g fat, 25g carbs)
+
+Total Calories: 300
+Total Protein: 5g
+Total Fat: 10g
+Total Carbs: 47g
+
+**Dinner (7:00 PM)**
+
+- **Grilled Salmon and Sweet Potato**:
+  - 120g grilled salmon (180 calories, 25g protein, 8g fat, 0g carbs)
+  - 100g cooked sweet potato (100 calories, 2g protein, 0g fat, 25g carbs)
+  - 20g green beans (20 calories, 1g protein, 0g fat, 5g carbs)
+
+Total Calories: 300
+Total Protein: 28g
+Total Fat: 8g
+Total Carbs: 30g
+
+**Before Bed Snack (9:00 PM)**
+
+- **Protein Shake and Berries**:
+  - 200g protein shake (200 calories, 50g protein, 0g fat, 0g carbs)
+  - 50g mixed berries (20 calories, 0g protein, 0g fat, 4g carbs)
+
+Total Calories: 220
+Total Protein: 50g
+Total Fat: 0g
+Total Carbs: 4g
+
+**Total Daily Nutrition:**
+
+- Calories: 2,515
+- Protein: 145g
+- Fat: 69g
+- Carbohydrates: 256g
+
+This meal plan provides a balanced mix of protein, fat, and carbohydrates to support athletic performance and satisfies the lactose intolerance requirement. It meets the daily caloric needs of approximately 55 kg female athlete and includes budget-friendly options.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The AI output mostly addresses the task, scenario, and criteria, but it slightly exceeds the daily caloric needs and does not explicitly mention drinking electrolyte-rich beverages during the provided meal plan.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 190<br><b>weight:</b> 90<br><b>goal:</b> &quot;Support muscle maintenance during a calorie deficit&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Swimmer aims to maintain muscle mass while in a calorie deficit</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 4 servings of lean protein sources<br>- Include complex carbohydrates to support muscle function<br>- Less than 30g of fat per meal<br>- Incorporate strength training exercises</td>
+          <td><pre>Assuming there are no specified dietary restrictions from the initial input, I will proceed with general athlete dietary restrictions that fit a muscle maintenance calorie deficit plan. If you could provide the dietary restrictions (gluten-free, lactose-intolerant, vegetarian, etc.), I can better tailor the meal plan.
+
+Let's assume the athlete has general athlete dietary restrictions with a calorie deficit goal.
+
+**Daily Calorie Intake Goal:**
+For a 190 cm, 90 kg athlete, the recommended daily calorie intake for muscle maintenance during a calorie deficit is around 2500-2800 calories.
+
+**Meal Plan:**
+
+**Breakfast (8:00 am)**
+- 3 whole egg omelette (180g)
+- 200g cooked oatmeal (220 calories, 40g protein, 4g fat, 40g carbs)
+- 150g mixed berries (60 calories, 1g protein, 1g fat, 15g carbs)
+Total: 440 calories, 41g protein, 5g fat, 55g carbs
+
+**Pre-Workout Snack (10:00 am)**
+- 250g Greek yogurt (170 calories, 30g protein, 0g fat, 20g carbs)
+- 150g banana (100 calories, 2g protein, 0g fat, 25g carbs)
+Total: 270 calories, 32g protein, 0g fat, 45g carbs
+
+**Lunch (12:00 pm)**
+- 200g grilled chicken breast (150 calories, 35g protein, 3g fat, 0g carbs)
+- 200g cooked quinoa (150 calories, 4g protein, 2g fat, 30g carbs)
+- 100g steamed broccoli (55 calories, 2g protein, 0g fat, 10g carbs)
+Total: 355 calories, 41g protein, 5g fat, 40g carbs
+
+**Post-Workout Snack (2:00 pm)**
+- 150g protein shake (120 calories, 30g protein, 0g fat, 0g carbs)
+- 150g mixed nuts (160 calories, 8g protein, 14g fat, 6g carbs)
+Total: 280 calories, 38g protein, 14g fat, 6g carbs
+
+**Dinner (5:00 pm)**
+- 300g grilled salmon (210 calories, 35g protein, 12g fat, 0g carbs)
+- 200g cooked brown rice (110 calories, 2g protein, 2g fat, 25g carbs)
+- 100g steamed asparagus (25 calories, 2g protein, 0g fat, 5g carbs)
+Total: 345 calories, 39g protein, 14g fat, 30g carbs
+
+**Evening Snack (8:00 pm)**
+- 150g cottage cheese (80 calories, 11g protein, 0g fat, 5g carbs)
+- 150g sliced cucumber (16 calories, 1g protein, 0g fat, 4g carbs)
+Total: 96 calories, 12g protein, 0g fat, 9g carbs
+
+**Total Daily Intake:**
+- Calories: 2681
+- Protein: 215g
+- Fat: 52g
+- Carbohydrates: 235g</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The output meets the majority of the criteria, but fails to meet the calorie goal and includes a meal with over 30g of fat.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 160<br><b>weight:</b> 45<br><b>goal:</b> &quot;Maintain energy levels throughout a long rehearsal day&quot;<br><b>restrictions:</b> &quot;Vegan&quot;</td>
+          <td>Dancer needs a high-fiber meal plan to manage energy levels</td>
+          <td>- 2200-2500 kcal total energy<br>- At least 5 servings of whole grains<br>- Include plant-based sources of omega-3 fatty acids (flaxseeds, walnuts)<br>- Moderate consumption of healthy fats<br>- Incorporate probiotic-rich foods (yogurt alternatives)</td>
+          <td><pre>**Vegan Athlete Meal Plan for Rehearsal Day**
+
+**Athlete Details:**
+
+- Height: 160 cm
+- Weight: 45 kg
+- Goal: Maintain energy levels throughout a long rehearsal day
+- Dietary restrictions: Vegan
+
+**Caloric Needs:**
+
+- For a 160 cm female athlete weighing 45 kg, the estimated daily calorie needs for endurance activities like long rehearsals is around 2200-2500 calories.
+
+**Meal Plan:**
+
+**Breakfast (7:00 am)**
+
+- Oatmeal with Banana, Almond-Free Milk, and Nutmeg
+  - 250g rolled oats
+  - 200g cooked oatmeal
+  - 1 medium banana (100g)
+  - 250ml almond-free milk (e.g., oat milk or soy milk)
+  - 1/4 tsp nutmeg
+
+Energy: 420 calories, Protein: 20g, Fat: 12g, Carbohydrates: 70g
+
+**Mid-Morning Snack (10:00 am)**
+
+- Apple and Peanut-Free Energy Balls
+  - 1 medium apple (150g)
+  - 2 tbsp peanut-free butter (e.g., sunflower seed butter)
+  - 10g chia seeds
+  - 20g rolled oats
+
+Energy: 220 calories, Protein: 5g, Fat: 16g, Carbohydrates: 25g
+
+**Lunch (1:00 pm)**
+
+- Quinoa Salad with Chickpeas and Avocado
+  - 50g cooked quinoa
+  - 50g chickpeas (garbanzo beans)
+  - 1/2 medium avocado (100g)
+  - 50g cucumber
+  - 10g chopped fresh parsley
+  - 2 tbsp vegan mayonnaise
+
+Energy: 450 calories, Protein: 20g, Fat: 22g, Carbohydrates: 35g
+
+**Mid-Afternoon Snack (4:00 pm)**
+
+- Carrot and Hummus
+  - 4-5 medium carrots (120g)
+  - 60g chickpea hummus
+
+Energy: 120 calories, Protein: 5g, Fat: 9g, Carbohydrates: 15g
+
+**Pre-Rewards Snack (6:00 pm)**
+
+- Brown Rice Cakes with Almond-Free Peanut Butter and Sliced Banana
+  - 2 brown rice cakes (40g)
+  - 20g almond-free peanut butter (e.g., sunflower seed butter)
+  - 1 medium banana (100g)
+
+Energy: 240 calories, Protein: 8g, Fat: 16g, Carbohydrates: 30g
+
+**Dinner (7:30 pm)**
+
+- Lentil Soup with Whole Grain Bread
+  - 200g cooked lentils
+  - 1 cup (250g) cooked lentil soup
+  - 2 slices whole grain bread (40g)
+
+Energy: 450 calories, Protein: 20g, Fat: 10g, Carbohydrates: 60g
+
+**Total Daily Intake:**
+
+- Energy: 2340 calories
+- Protein: 93g
+- Fat: 105g
+- Carbohydrates: 320g
+
+**Budget-Friendly Tips:**
+
+- Shop for seasonal fruits and vegetables to get the best prices.
+- Buy in bulk: oats, quinoa, chickpeas, and lentils are often cheaper in bulk.
+- Opt for store-brand or generic options for peanut-free butter, almond-free milk, and vegan mayonnaise.
+- Use herbs and spices for flavor instead of relying on expensive sauces.
+
+This meal plan provides a balanced mix of protein, fat, and carbohydrates to help maintain energy levels throughout the long rehearsal day. The portion sizes can be adjusted based on individual calorie needs. Stay hydrated by drinking plenty of water throughout the day.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The AI output is well-structured and provides a balanced meal plan with a detailed macronutrient breakdown, but misses incorporating plant-based sources of omega-3 fatty acids. While the overall calorie range is within the acceptable limit, some meal suggestions can be adjusted for optimal portion control.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 72<br><b>goal:</b> &quot;Optimize bone health through nutrition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Gymnast requires a meal plan to support bone health during intense training</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of calcium-rich foods (dairy, fortified plant-based milk)<br>- Include vitamin D-fortified foods (fortified orange juice, mushrooms)<br>- Moderate consumption of healthy fats<br>- Engage in weight-bearing exercises 2-3 times a week</td>
+          <td><pre>Since dietary restrictions are not provided, I will assume the following common restrictions that can benefit bone health:
+
+- The athlete is vegetarian (no meat or fish but includes dairy and eggs)
+- The athlete is lacto-ovo-vegetarian (includes dairy and eggs)
+- A calorie goal of 2500-2800 calories per day
+
+**Assumptions:**
+- Activity level: Moderate to high (athletics)
+- Age: 18-35
+- Height: 170 cm
+- Weight: 72 kg
+
+**Daily Calorie Needs:** 
+- Sedentary: 1900-2200 calories
+- Lightly active: 2000-2400 calories
+- Moderately active: 2200-2400 calories
+- Very active: 2400-3000 calories
+- Athletes: 2500-2800 calories
+Based on the provided information, an optimal daily calorie intake for this athlete could be 2600 calories.
+
+**Meal Plan:**
+
+**Breakfast (6 am - 7 am)**
+
+- **1 bowl Oatmeal** (250g)
+  - 120 calories, 4.5g protein, 4g fat, 25g carb
+- **1 banana** (100g)
+  - 100 calories, 1g protein, 0g fat, 25g carb
+- **1 cup non-fat plain yogurt** (200g)
+  - 100 calories, 10g protein, 0g fat, 20g carb
+- **1 cup mixed berries** (150g)
+  - 60 calories, 1g protein, 1g fat, 15g carb
+
+Total: 380 calories, 16g protein, 5g fat, 85g carb
+
+**Mid-morning Snack (10 am - 11 am)**
+
+- **1 cup almonds** (140g)
+  - 520 calories, 18g protein, 44g fat, 15g carb
+- **1 medium apple** (150g)
+  - 95 calories, 0.3g protein, 0g fat, 25g carb
+
+Total: 615 calories, 18.3g protein, 44g fat, 40g carb
+
+**Lunch (1 pm - 2 pm)**
+
+- **1 cup cooked brown rice** (200g)
+  - 215 calories, 5g protein, 1g fat, 50g carb
+- **3 oz cooked chicken breast** (80g)
+-   *Since the athlete is lacto-ovo-vegetarian, this is modified to:* 
+- **3 oz cooked chickpeas** (80g)
+  - 120 calories, 5g protein, 2.5g fat, 22g carb
+- **1 cup mixed greens salad** (50g)
+  - 10 calories, 1g protein, 0g fat, 5g carb
+- **1/2 cup cherry tomatoes** (100g)
+  - 20 calories, 1g protein, 0g fat, 5g carb
+
+Total: 375 calories, 12g protein, 3.5g fat, 82g carb
+
+**Mid-Afternoon Snack (4 pm - 5 pm)**
+
+- **1 cup edamame** (125g)
+  - 125 calories, 10g protein, 2.5g fat, 10g carb
+
+Total: 125 calories, 10g protein, 2.5g fat, 10g carb
+
+**Dinner (6 pm - 7 pm)**
+
+- **1 cup cooked quinoa** (200g)
+  - 170 calories, 4g protein, 2g fat, 40g carb
+- **1 cup steamed broccoli** (50g)
+  - 55 calories, 2.5g protein, 0.5g fat, 10g carb
+- **3 oz cooked tofu** (80g)
+  - 120 calories, 10g protein, 5g fat, 4g carb
+- **1 cup cooked sweet potato** (100g)
+  - 105 calories, 2g protein, 0g fat, 25g carb
+
+Total: 450 calories, 18.5g protein, 7.5g fat, 69g carb
+
+Total Daily Intake:
+
+- Calories: 2605
+- Protein: 94g
+- Fat: 78g
+- Carbohydrates: 381g
+
+This meal plan meets the athlete's calorie and nutrient requirements while focusing on bone health benefits through a balanced intake of protein, calcium-rich foods (dairy, nuts), and vitamin D-rich foods (eggs, vitamin D-fort</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The output meets the daily caloric requirements but lacks vitamin D-fortified foods.</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
