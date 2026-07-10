@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prompt Evaluation Report</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #ececec; margin: 0; padding: 32px; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 24px; }
+  .cards { display: flex; gap: 16px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 6px; padding: 16px 24px; flex: 1; }
+  .card .label { font-size: 13px; color: #57606a; margin-bottom: 8px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th { background: #24292f; color: #fff; text-align: left; padding: 10px 12px; font-size: 13px; }
+  td { padding: 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; font-size: 13px; }
+  pre { white-space: pre-wrap; font-family: inherit; margin: 0; background: #f6f8fa; padding: 8px; border-radius: 4px; }
+  .score-badge { display: inline-block; min-width: 24px; text-align: center; color: #fff; border-radius: 4px; padding: 2px 8px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>Prompt Evaluation Report</h1>
+  <div class="cards">
+    <div class="card"><div class="label">Total Test Cases</div><div class="value">8</div></div>
+    <div class="card"><div class="label">Average Score</div><div class="value">6.1 / 10</div></div>
+    <div class="card"><div class="label">Pass Rate (&ge;7)</div><div class="value">50.0%</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Prompt Inputs</th>
+        <th>Scenario</th>
+        <th>Solution Criteria</th>
+        <th>Output</th>
+        <th>Score</th>
+        <th>Reasoning</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 65<br><b>goal:</b> &quot;Gain energy for a high-intensity volleyball game&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Volleyball player wants a high-carb meal plan for the day before a game</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 4 servings of complex carbohydrates<br>- Include lean protein sources (chicken, fish, beans)<br>- Less than 50g of fat<br>- Drink at least 2 liters of water</td>
+          <td><pre>To provide a suitable diet plan for this individual, I'll consider their height, weight, goal, and dietary restrictions. However, you haven't mentioned any specific dietary restrictions.
+
+Assuming there are no dietary restrictions, here's a general plan to help them gain energy for a high-intensity volleyball game:
+
+1. **Carbohydrates**: Focus on complex carbohydrates such as whole grains, fruits, and vegetables. Examples include:
+	* Brown rice
+	* Whole-wheat bread
+	* Sweet potatoes
+	* Apples
+	* Bananas
+2. **Protein**: Include lean protein sources to support energy production and muscle function:
+	* Chicken breast
+	* Fish (salmon, tilapia, or cod)
+	* Legumes (e.g., chickpeas, black beans, or lentils)
+	* Eggs
+	* Nuts and seeds (e.g., almonds, pumpkin seeds, or chia seeds)
+3. **Healthy Fats**: Include sources of healthy fats for energy and satiety:
+	* Avocado
+	* Olive oil
+	* Nuts and seeds (e.g., almonds, pumpkin seeds, or chia seeds)
+4. **Hydration**: Ensure adequate hydration by consuming plenty of water throughout the day.
+5. **Timing**: Focus on a balanced meal 1-2 hours before the game, and consider a lighter snack 30 minutes before play. Examples of a pre-game meal and snack:
+	* Meal: Grilled chicken breast with whole-grain rice and steamed vegetables
+	* Snack: Banana with almond butter or a handful of trail mix
+
+To further tailor the diet plan to their specific needs, I would like to know their dietary restrictions. Some possible restrictions include:
+
+* Vegetarian or vegan
+* Gluten-free
+* Dairy-free
+* Low-carb or keto
+* Food allergies (e.g., nuts, shellfish, or soy)
+
+Please provide any additional information about their dietary restrictions, so I can provide a more specific and safe diet plan.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">7.0</span></td>
+          <td>The AI output correctly identifies the client's goal, provides a general high-carb meal plan, and meets some of the solution criteria, but fails to fully tailor the plan to the client's specific needs and does not provide a detailed breakdown of daily caloric total, macronutrient breakdown, or include specific timing for meals and snacks for the pre-game meal and snack.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 180<br><b>weight:</b> 60<br><b>goal:</b> &quot;Maintain weight for optimal running performance&quot;<br><b>restrictions:</b> &quot;Vegetarian&quot;</td>
+          <td>Endurance runner needs a low-calorie meal plan to help manage weight</td>
+          <td>- 1800-2000 kcal total energy<br>- At least 3 servings of whole grains<br>- Include plant-based protein sources (lentils, tofu, tempeh)<br>- Less than 30g of fat per meal<br>- Incorporate hydrating foods (cucumbers, celery)</td>
+          <td><pre>To maintain an optimal weight for running performance as a 180 cm tall, 60 kg vegetarian, we'll need to determine the person's body mass index (BMI) and daily caloric needs.
+
+First, let's calculate the BMI:
+
+Weight (kg) = 60 kg
+Height (m) = 1.8 m (180 cm)
+
+BMI = Weight / (Height)^2
+= 60 kg / (1.8 m)^2
+= 60 kg / 3.24 m^2
+= 18.5
+
+For a person of this height and weight, a BMI of 18.5 is considered underweight. To maintain an optimal weight, the goal is to aim for a slightly higher BMI, around 21-23.
+
+Daily caloric needs for a vegetarian runner can be estimated based on their weight and activity level. For a runner, the daily caloric needs are typically higher to support training and recovery.
+
+A safe estimate is:
+
+* Sedentary (little or no exercise): 1,600-2,000 calories/day
+* Lightly active (light exercise/sports 1-3 days/week): 2,000-2,200 calories/day
+* Moderately active (moderate exercise/sports 3-5 days/week): 2,200-2,600 calories/day
+* Very active (hard exercise/sports 6-7 days a week): 2,600-3,000 calories/day
+* Extremely active (very hard exercise/sports &amp; physical job or 2x training): 3,000+ calories/day
+
+Considering the person's height, weight, and activity level (assuming they're moderately to very active as a runner), a suitable daily caloric intake could be:
+
+* 2,400-2,800 calories/day
+
+In terms of macronutrient distribution, here's a general guideline for a vegetarian runner:
+
+* Carbohydrates: 55-60% of daily calories (210-336 grams)
+* Protein: 15-20% of daily calories (90-120 grams)
+* Fat: 20-25% of daily calories (40-56 grams)
+
+In addition to a balanced diet, consider the following nutrition tips for runners:
+
+1. Focus on complex carbohydrates (whole grains, fruits, vegetables) for sustained energy.
+2. Include lean protein sources (legumes, beans, tofu, tempeh) for muscle repair and recovery.
+3. Healthy fats (nuts, avocados, olive oil) support energy production and overall health.
+4. Staying hydrated is crucial for runners; aim for at least 8-10 glasses of water per day.
+5. Consider consulting a registered dietitian or a certified sports nutritionist for personalized advice.
+
+As for specific food recommendations, here are some sample vegetarian options:
+
+* Breakfast: Whole-grain toast with avocado, scrambled eggs, or tofu, and a glass of orange juice.
+* Snack: Banana with almond butter, a handful of nuts, or a energy bar (look for vegan and gluten-free options).
+* Lunch: Whole-grain pita stuffed with hummus, vegetables, and lean protein sources (e.g., chickpeas, black beans).
+* Snack: Apple slices with peanut butter, a smoothie made with banana, spinach, and plant-based milk.
+* Dinner: Quinoa or brown rice with roasted vegetables, lean protein sources (e.g., tofu, tempeh), and a side of steamed broccoli.
+
+Remember, this is a general guideline. Always consult with a healthcare professional or a registered dietitian to determine the best diet for your individual needs.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">6.0</span></td>
+          <td>The AI output meets most of the criteria, but fails to provide exact daily caloric total, macronutrient breakdown, and meals with specific foods, portions, and timing, which are important for a precise dietary plan.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 185<br><b>weight:</b> 100<br><b>goal:</b> &quot;Optimize muscle recovery after a powerlifting competition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Powerlifter requires a high-protein meal plan to aid muscle recovery</td>
+          <td>- 3500-4000 kcal total energy<br>- At least 5 servings of lean protein sources (chicken, fish, beef)<br>- Include complex carbohydrates (brown rice, whole wheat)<br>- Less than 40g of fat per meal<br>- Hydrate with a post-workout supplement</td>
+          <td><pre>To optimize muscle recovery after a powerlifting competition, it's essential to focus on nutrient-dense foods that support muscle repair and replenish energy stores.
+
+Firstly, let's calculate the individual's daily calorie needs. For a 185cm (6 ft) tall male with a weight goal of optimizing muscle recovery, an estimate of daily calorie needs would be around 3200-3500 calories, considering a combination of the basal metabolic rate (BMR), the thermic effect of food (TEF), and increased caloric demands for recovery.
+
+Here's a suggested dietary plan:
+
+**1. Protein:** Aim for 1.6-2.2 grams of protein per kilogram of body weight (about 120-150g for this individual). Protein sources include:
+	* Lean meats: chicken, turkey, beef, fish (salmon, tuna, cod)
+	* Eggs
+	* Legumes: black beans, chickpeas, lentils
+	* Dairy: milk, Greek yogurt, cottage cheese
+	* Plant-based options: soy milk, tofu, tempeh
+
+**2. Complex Carbohydrates:** Include foods rich in complex carbohydrates to replenish energy stores:
+	* Whole grains: brown rice, whole wheat bread, quinoa
+	* Vegetables: sweet potatoes, broccoli, spinach
+	* Fruits: berries, apples, bananas
+
+**3. Healthy Fats:** Nourish your body with a balance of healthy fats:
+	* Nuts and seeds: almonds, walnuts, chia seeds
+	* Avocado
+	* Fatty fish: salmon, sardines, mackerel
+
+**4. Recovery Foods:** Focus on foods rich in antioxidants and anti-inflammatory compounds to aid in muscle recovery:
+	* Berries (antioxidants)
+	* Turmeric (curcumin, anti-inflammatory)
+	* Ginger (anti-inflammatory)
+	* Omega-3 fatty acids (salmon, flaxseeds)
+
+**5. Hydration:** Aim to drink at least 8-10 glasses of water per day, and consider adding an electrolyte-rich beverage, like sports drinks or coconut water, to replenish sodium and potassium levels after your competition.
+
+**Dietary Restrictions:** 
+Since the problem statement doesn't specify any dietary restrictions, we'll make the assumption that there are none. However, if you have specific restrictions (e.g. vegetarian, gluten-free, lactose intolerant), please let me know so I can provide a more tailored recommendation.
+
+Here's a sample meal plan for the next 2-3 days to support muscle recovery:
+
+- Breakfast: Overnight oats with banana, almond butter, and protein powder (300 calories, 30g protein)
+- Snack: Apple slices with almond butter (150 calories, 4g protein)
+- Lunch: Grilled chicken breast with sweet potatoes and steamed broccoli (400 calories, 40g protein)
+- Snack: Greek yogurt with berries and honey (200 calories, 20g protein)
+- Dinner: Grilled salmon with quinoa and roasted vegetables (500 calories, 50g protein)
+- Before Bed: Casein protein shake with almond milk and banana (250 calories, 20g protein)
+
+Remember to consult with a registered dietitian or healthcare professional for a personalized nutrition plan and to discuss any specific dietary requirements or restrictions.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">9.0</span></td>
+          <td>The AI output provides a clear recommendation for a powerlifter's meal plan, meeting all specified criteria except one minor omission in the daily caloric breakdown. However, it is a detailed and well-structured response that addresses the scenario effectively, with a suggested meal plan and hydration strategy.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 175<br><b>weight:</b> 80<br><b>goal:</b> &quot;Promote overall health and well-being through nutrition&quot;<br><b>restrictions:</b> &quot;Gluten-free&quot;</td>
+          <td>Cyclist needs a balanced meal plan to improve overall health</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of whole grains (gluten-free options)<br>- Include a variety of fruits and vegetables<br>- Moderate consumption of lean protein and healthy fats<br>- Drink at least 1 liter of water per hour of cycling</td>
+          <td><pre>To provide personalized dietary recommendations, let's calculate the individual's daily calorie needs.
+
+A safe estimate for daily calorie intake is the Basal Metabolic Rate (BMR), which can be calculated using the following formula:
+
+BMR (men) = 66 + (6.2 x weight in lbs) + (12.7 x height in inches) - (6.76 x age in years)
+
+However, since we don't have the person's age, we can use a simpler method based on weight.
+
+For men:
+- 150 lbs = 1,900 calories
+- 160 lbs = 2,000 calories
+- 170 lbs = 2,100 calories
+- 180 lbs = 2,200 calories
+
+Given the person's weight is approximately 80 lbs less than the lowest weight listed above (150 lbs), their caloric requirements would likely be less than 1,900 calories per day based on standard formulas.
+
+For overall health and well-being, aim for the following macronutrient ratios:
+
+- 15-20% of total calories from protein
+- 25-35% from fat
+- 55-65% from carbohydrates
+
+Based on these assumptions, consider a daily calorie intake of around 1,800-2,200 calories. This will be our basis for the following recommendations.
+
+**Meal ideas for overall health and well-being:**
+
+1. **Breakfast**
+	* Gluten-free oatmeal with fruits (berries, banana) and nuts (walnuts, almonds)
+	* Eggs (2-3) with gluten-free whole-grain toast or a gluten-free breakfast wrap
+	* Greek yogurt with berries, nuts, and chia seeds
+2. **Lunch**
+	* Grilled chicken or fish with brown rice and steamed vegetables (broccoli, carrots)
+	* Salads with mixed greens, vegetables (cucumber, tomato), and lean protein (chicken, turkey)
+	* Lentil soup or stews with gluten-free whole-grain bread
+3. **Dinner**
+	* Grilled lean meats (chicken, turkey, fish) with roasted vegetables (sweet potatoes, asparagus) and quinoa or brown rice
+	* Stir-fries with vegetables, lean protein (tofu, chicken), and brown rice
+4. **Snacks**
+	* Fresh fruits (apples, bananas)
+	* Nuts and seeds (almonds, cashews, pumpkin seeds)
+	* Dark chocolate (70% cocoa)
+
+**Gluten-free tips:**
+
+1. Choose gluten-free whole grains like brown rice, quinoa, and gluten-free oats.
+2. Use gluten-free flours for baking, such as almond flour and coconut flour.
+3. Be mindful of hidden sources of gluten, like sauces, condiments, and processed foods.
+4. Consider working with a registered dietitian for personalized recommendations on gluten-free nutrition.
+
+**Hydration:**
+
+Aim for at least 8-10 glasses of water per day to stay hydrated.
+
+**Supplements:**
+
+Consider consulting a healthcare professional or registered dietitian before taking any supplements.
+
+These recommendations are based on general guidelines and should be tailored to the individual's specific needs and preferences. Regular consultation with a healthcare professional or registered dietitian is recommended to ensure optimal nutrition.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">4.0</span></td>
+          <td>The AI output does not meet most of the specified solution criteria and does not include a daily caloric total, macronutrient breakdown, or exact meal timings.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 165<br><b>weight:</b> 55<br><b>goal:</b> &quot;Optimize performance under time constraints&quot;<br><b>restrictions:</b> &quot;Lactose intolerance&quot;</td>
+          <td>Triathlete requires a specialized meal plan to accommodate a food intolerance</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 3 servings of complex carbohydrates<br>- Include lactose-free protein sources (rice protein, eggs)<br>- Moderate consumption of healthy fats<br>- Stay hydrated with electrolyte-rich beverages</td>
+          <td><pre>To optimize performance under time constraints, it's essential to fuel the body with a balanced diet that provides energy, aids in recovery, and supports mental focus. Considering the individual's lactose intolerance, we'll focus on lactose-free or low-lactose foods. Here's a general outline:
+
+**Caloric Requirements:**
+
+For optimal performance, this person requires a caloric intake that supports energy needs and supports weight gain. Based on their height and current weight, a safe estimate for daily calories is:
+
+* Maintenance: 1800-2000 calories
+* Weight gain (1-1.5 kg/week): 2200-2500 calories
+* Performance optimization: 2500-2800 calories
+
+**Macro-Nutrient Breakdown:**
+
+Aim for a balanced diet with the following macro-nutrient ratio:
+
+* Carbohydrates: 55-60% of daily calories (e.g., 275-300g)
+* Protein: 25-30% of daily calories (e.g., 120-140g)
+* Fat: 15-20% of daily calories (e.g., 50-70g)
+
+**Specific Food Recommendations:**
+
+1. **Carbohydrates:**
+	* Whole grains (brown rice, quinoa, whole wheat bread)
+	* Fruits (bananas, berries, citrus fruits)
+	* Vegetables (dark leafy greens, bell peppers, sweet potatoes)
+2. **Protein:**
+	* Lean meats (chicken, turkey, fish)
+	* Legumes (lentils, chickpeas, black beans)
+	* Nuts and seeds (almonds, chia seeds, hemp seeds)
+	* Lactose-free milk alternatives (almond milk, soy milk, coconut milk)
+3. **Fat:**
+	* Nuts and seeds (as mentioned above)
+	* Avocados
+	* Olive oil
+	* Fatty fish (salmon, sardines)
+4. **Supplements:**
+	* Consider adding a lactose-free probiotic to support gut health
+	* A vitamin D supplement may be beneficial, especially if the individual spends most time indoors
+
+**Specific Meal and Snack Ideas:**
+
+1. Breakfast: Overnight oats with almond milk, banana, and almond butter
+2. Lunch: Grilled chicken breast with quinoa, mixed vegetables, and a citrus vinaigrette dressing
+3. Snack: Apple slices with almond butter
+4. Pre-workout snack: Banana with peanut butter
+5. Post-workout snack: Smoothie with lactose-free milk alternative, frozen berries, and protein powder
+
+**Time-Saving Tips:**
+
+1. Prepare meals in advance
+2. Use a slow cooker or Instant Pot for easy meal prep
+3. Choose quick-cooking protein sources like chicken breast or lentils
+4. Pack snacks and meals on-the-go
+5. Use a meal delivery service or online meal planning resources for inspiration</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">8.0</span></td>
+          <td>The AI output meets most of the required criteria but lacks detail in the timing of meals and does not exactly provide food portions.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 190<br><b>weight:</b> 90<br><b>goal:</b> &quot;Support muscle maintenance during a calorie deficit&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Swimmer aims to maintain muscle mass while in a calorie deficit</td>
+          <td>- 2000-2200 kcal total energy<br>- At least 4 servings of lean protein sources<br>- Include complex carbohydrates to support muscle function<br>- Less than 30g of fat per meal<br>- Incorporate strength training exercises</td>
+          <td><pre>To provide a suitable eating recommendation, I'll need more specific dietary restrictions. Please provide the following information:
+
+1. Any food allergies or intolerances (e.g., gluten, lactose, nuts, etc.)
+2. Any specific dietary preferences or restrictions (e.g., vegetarian, vegan, halal, keto, low-carb, etc.)
+3. Are you looking to follow a specific macronutrient ratio (e.g., 30% protein, 20% fat, 50% carbs)?
+4. What is your estimated daily calorie deficit goal (e.g., 250, 500, 750 calories below maintenance level)?
+
+Please provide this information so I can give you personalized guidance on what to eat to support muscle maintenance during a calorie deficit.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">4.0</span></td>
+          <td>The AI output asks for more information and does not provide a personalized eating recommendation, it only briefly mentions the requirements for the recommendation.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 160<br><b>weight:</b> 45<br><b>goal:</b> &quot;Maintain energy levels throughout a long rehearsal day&quot;<br><b>restrictions:</b> &quot;Vegan&quot;</td>
+          <td>Dancer needs a high-fiber meal plan to manage energy levels</td>
+          <td>- 2200-2500 kcal total energy<br>- At least 5 servings of whole grains<br>- Include plant-based sources of omega-3 fatty acids (flaxseeds, walnuts)<br>- Moderate consumption of healthy fats<br>- Incorporate probiotic-rich foods (yogurt alternatives)</td>
+          <td><pre>For a vegan person who is 160cm tall and 45kg, aiming to maintain energy levels throughout a long rehearsal day, I recommend a balanced diet rich in complex carbohydrates, protein, and healthy fats. Here's a suggestion:
+
+**Breakfast**
+
+- Oatmeal with fruit and nuts: Steel-cut oats or rolled oats cooked with plant-based milk (e.g., soy, almond, or coconut milk) and topped with berries, sliced almonds, and shredded coconut. This provides sustained energy, fiber, and healthy fats.
+- Calories: approximately 500-600
+- Protein: 10-15g
+- Fat: 20-25g
+
+**Mid-morning Snack**
+
+- Energy balls: Made with oats, dates, nuts, and dried fruits, these no-bake bites are easy to digest and provide a quick energy boost.
+- Calories: approximately 200-300
+- Protein: 5-8g
+- Fat: 10-15g
+
+**Lunch**
+
+- Whole-grain vegan wrap: Fill a whole-grain wrap with roasted vegetables (e.g., sweet potatoes, carrots, and broccoli), vegan hummus, and avocado. This combination provides sustained energy and fiber.
+- Calories: approximately 600-800
+- Protein: 15-20g
+- Fat: 25-30g
+
+**Mid-afternoon Snack**
+
+- Fresh fruit salad: A mix of seasonal fruits such as apples, bananas, and citrus fruits provides a natural energy boost and essential vitamins and minerals.
+- Calories: approximately 100-150
+- Protein: 2-3g
+- Fat: 0-5g
+
+**Dinner**
+
+- Quinoa and black bean bowl: Cook quinoa and black beans with roasted vegetables (e.g., sweet potatoes, carrots, and broccoli) and a drizzle of olive oil. This complex carbohydrate and protein-rich meal will keep you energized until the end of your rehearsal day.
+- Calories: approximately 800-1000
+- Protein: 20-25g
+- Fat: 30-40g
+
+**Before the Rehearsal**
+
+- Banana and almond butter: A classic combination of potassium-rich bananas and healthy fats from almond butter provides a quick energy boost.
+- Calories: approximately 150-200
+- Protein: 4-6g
+- Fat: 8-10g
+
+**Additional Tips**
+
+- Stay hydrated by drinking plenty of water throughout the day.
+- Limit caffeine and sugary foods, as they can lead to energy crashes later.
+- Aim to eat every 3-4 hours to maintain stable energy levels.
+- Choose plant-based protein sources like legumes, nuts, and seeds to support muscle function and recovery.
+
+This meal plan is tailored to provide a balance of energy-boosting complex carbohydrates, protein, and healthy fats, while adhering to the vegan dietary restrictions.</pre></td>
+          <td><span class="score-badge" style="background:#9a6700">4.0</span></td>
+          <td>The AI output partially satisfies the scenario and criteria but fails to provide a detailed solution and is missing specific macronutrient requirements.</td>
+        </tr>
+
+        <tr>
+          <td><b>height:</b> 170<br><b>weight:</b> 72<br><b>goal:</b> &quot;Optimize bone health through nutrition&quot;<br><b>restrictions:</b> &quot;&quot;</td>
+          <td>Gymnast requires a meal plan to support bone health during intense training</td>
+          <td>- 2500-2800 kcal total energy<br>- At least 3 servings of calcium-rich foods (dairy, fortified plant-based milk)<br>- Include vitamin D-fortified foods (fortified orange juice, mushrooms)<br>- Moderate consumption of healthy fats<br>- Engage in weight-bearing exercises 2-3 times a week</td>
+          <td><pre>To optimize bone health through nutrition, the individual should focus on a diet rich in calcium and vitamin D. Here are some general recommendations:
+
+**Caloric intake:** Based on the height and weight, the estimated daily caloric needs are around 1700-2000 calories.
+
+**Food groups:**
+
+1. **Calcium-rich foods:**
+	* Dairy: 3-4 cups per day of milk, cheese, and yogurt.
+	* Calcium-fortified plant-based milk alternatives.
+	* Leafy greens: broccoli, kale, spinach.
+	* Fortified plant-based foods: cereals, juice.
+2. **Vitamin D-rich foods:**
+	* Fatty fish: salmon, mackerel, sardines.
+	* Fortified dairy products and plant-based milk alternatives.
+	* Mushrooms (especially shiitake and porcini).
+3. **Other essential nutrients:**
+	* Vitamin K (broccoli, spinach, kale).
+	* Magnesium (dark leafy greens, nuts, seeds).
+
+**Specific dietary recommendations:**
+
+1. **Dairy:** Include a variety of dairy products in your diet, such as milk, cheese, and yogurt, and choose those with high calcium content (300-400 mg per serving).
+2. **Fatty fish:** Eat fatty fish at least twice a week to get a good dose of vitamin D (400-600 IU per 3 oz serving).
+3. **Fortified foods:** Look for calcium and vitamin D fortified plant-based milk alternatives, cereals, and juice.
+4. **Dark leafy greens:** Include 2-3 servings of dark leafy greens like broccoli, spinach, and kale in your diet.
+5. **Nuts and seeds:** Eat nuts and seeds, such as almonds and sesame seeds, rich in magnesium.
+
+**Restrictions-free foods:** Since there are no mentioned dietary restrictions, consider the following foods for their potential bone health benefits:
+
+1. **Fatty fish:** Fatty fish like salmon and sardines are high in omega-3 fatty acids, which support bone health.
+2. **Herbs and spices:** Spices like turmeric and ginger have anti-inflammatory properties, which can help with bone health.
+3. **Fermented foods:** Fermented foods like kimchi and sauerkraut contain probiotics that support gut health.
+
+**Additional tips:**
+
+1. **Stay hydrated:** Drink plenty of water throughout the day to maintain healthy bones.
+2. **Don't smoke:** Smoking is a risk factor for osteoporosis, so quitting is essential for bone health.
+3. **Limit caffeine:** Excessive caffeine consumption can interfere with calcium absorption.
+
+Considering these recommendations can support optimal bone health through nutrition for the individual. Consult with a registered dietitian or a healthcare professional for personalized advice.</pre></td>
+          <td><span class="score-badge" style="background:#1a7f37">7.0</span></td>
+          <td>The AI output provides a good start for optimal bone health through nutrition, but it does not meet some of the specific criteria mentioned, such as the total energy range (2500-2800 kcal) and macronutrient breakdown is not provided.</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+[
+  {
+    "scenario": "Volleyball player wants a high-carb meal plan for the day before a game",
+    "height": 170,
+    "weight": 65,
+    "goal": "Gain energy for a high-intensity volleyball game",
+    "restrictions": "",
+    "solutionCriteria": "- 2500-2800 kcal total energy\n- At least 4 servings of complex carbohydrates\n- Include lean protein sources (chicken, fish, beans)\n- Less than 50g of fat\n- Drink at least 2 liters of water"
+  },
+  {
+    "scenario": "Endurance runner needs a low-calorie meal plan to help manage weight",
+    "height": 180,
+    "weight": 60,
+    "goal": "Maintain weight for optimal running performance",
+    "restrictions": "Vegetarian",
+    "solutionCriteria": "- 1800-2000 kcal total energy\n- At least 3 servings of whole grains\n- Include plant-based protein sources (lentils, tofu, tempeh)\n- Less than 30g of fat per meal\n- Incorporate hydrating foods (cucumbers, celery)"
+  },
+  {
+    "scenario": "Powerlifter requires a high-protein meal plan to aid muscle recovery",
+    "height": 185,
+    "weight": 100,
+    "goal": "Optimize muscle recovery after a powerlifting competition",
+    "restrictions": "",
+    "solutionCriteria": "- 3500-4000 kcal total energy\n- At least 5 servings of lean protein sources (chicken, fish, beef)\n- Include complex carbohydrates (brown rice, whole wheat)\n- Less than 40g of fat per meal\n- Hydrate with a post-workout supplement"
+  },
+  {
+    "scenario": "Cyclist needs a balanced meal plan to improve overall health",
+    "height": 175,
+    "weight": 80,
+    "goal": "Promote overall health and well-being through nutrition",
+    "restrictions": "Gluten-free",
+    "solutionCriteria": "- 2500-2800 kcal total energy\n- At least 3 servings of whole grains (gluten-free options)\n- Include a variety of fruits and vegetables\n- Moderate consumption of lean protein and healthy fats\n- Drink at least 1 liter of water per hour of cycling"
+  },
+  {
+    "scenario": "Triathlete requires a specialized meal plan to accommodate a food intolerance",
+    "height": 165,
+    "weight": 55,
+    "goal": "Optimize performance under time constraints",
+    "restrictions": "Lactose intolerance",
+    "solutionCriteria": "- 2000-2200 kcal total energy\n- At least 3 servings of complex carbohydrates\n- Include lactose-free protein sources (rice protein, eggs)\n- Moderate consumption of healthy fats\n- Stay hydrated with electrolyte-rich beverages"
+  },
+  {
+    "scenario": "Swimmer aims to maintain muscle mass while in a calorie deficit",
+    "height": 190,
+    "weight": 90,
+    "goal": "Support muscle maintenance during a calorie deficit",
+    "restrictions": "",
+    "solutionCriteria": "- 2000-2200 kcal total energy\n- At least 4 servings of lean protein sources\n- Include complex carbohydrates to support muscle function\n- Less than 30g of fat per meal\n- Incorporate strength training exercises"
+  },
+  {
+    "scenario": "Dancer needs a high-fiber meal plan to manage energy levels",
+    "height": 160,
+    "weight": 45,
+    "goal": "Maintain energy levels throughout a long rehearsal day",
+    "restrictions": "Vegan",
+    "solutionCriteria": "- 2200-2500 kcal total energy\n- At least 5 servings of whole grains\n- Include plant-based sources of omega-3 fatty acids (flaxseeds, walnuts)\n- Moderate consumption of healthy fats\n- Incorporate probiotic-rich foods (yogurt alternatives)"
+  },
+  {
+    "scenario": "Gymnast requires a meal plan to support bone health during intense training",
+    "height": 170,
+    "weight": 72,
+    "goal": "Optimize bone health through nutrition",
+    "restrictions": "",
+    "solutionCriteria": "- 2500-2800 kcal total energy\n- At least 3 servings of calcium-rich foods (dairy, fortified plant-based milk)\n- Include vitamin D-fortified foods (fortified orange juice, mushrooms)\n- Moderate consumption of healthy fats\n- Engage in weight-bearing exercises 2-3 times a week"
+  }
+]

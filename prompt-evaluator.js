@@ -72,7 +72,7 @@ function sleep(ms) {
 //   request before we ever see the malformed text. This is flaky
 //   generation, not a real error — a fresh attempt almost always
 //   produces valid JSON, so we just ask again instead of crashing.
-async function withRetry(fn, { retries = 5 } = {}) {
+async function withRetry(fn, { retries = 10 } = {}) {
   for (let attempt = 0; attempt <= retries; attempt++) {
     try {
       return await fn();
@@ -95,11 +95,11 @@ async function withRetry(fn, { retries = 5 } = {}) {
 
 // Plain chat call — returns just the text, same shape as the notebook's
 // chat() helper. This is what YOUR runPrompt functions should call.
-export async function chat(messages, { temperature = 1.0 } = {}) {
+export async function chat(messages, { temperature = 1.0, maxTokens = 1000 } = {}) {
   const response = await withRetry(() =>
     groq.chat.completions.create({
       model: MODEL,
-      max_tokens: 1000,
+      max_tokens: maxTokens,
       messages,
       temperature,
     })
@@ -348,12 +348,17 @@ Vary the scenarios meaningfully (different goals, different constraints) so the 
 Return ONLY a raw JSON array of ${numCases} such objects. No markdown code fences, no extra text before or after.`;
 
     // Fast models occasionally produce malformed JSON (e.g. a missing
-    // closing brace). Rather than crash the whole pipeline on a flaky
-    // generation, just ask again a few times before giving up.
+    // closing brace, or truncation mid-string if the response runs out
+    // of tokens before finishing). Rather than crash the whole pipeline
+    // on a flaky generation, just ask again a few times before giving
+    // up. maxTokens scales with numCases — each test case now includes
+    // a scenario label AND a multi-line solutionCriteria checklist, so
+    // the fixed 1000-token default truncates anything beyond ~3-4 cases.
     const maxAttempts = 3;
+    const maxTokens = Math.max(1500, numCases * 350);
     let lastError;
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      const raw = await chat([{ role: 'user', content: prompt }]);
+      const raw = await chat([{ role: 'user', content: prompt }], { maxTokens });
       const cleaned = raw.trim().replace(/^```json\s*/i, '').replace(/```$/i, '').trim();
       try {
         const dataset = JSON.parse(cleaned);
