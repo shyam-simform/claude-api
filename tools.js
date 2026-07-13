@@ -95,5 +95,110 @@ const getCurrentDatetimeSchema = {
   },
 };
 
-export { getCurrentDatetime, getCurrentDatetimeSchema };
+// Inverse of formatDate — parses a string produced with a given
+// strftime-style format back into a JS Date. Needed so
+// addDurationToDatetime can read the same format getCurrentDatetime
+// writes, keeping the two tools chainable.
+function parseDate(dateString, format) {
+  const tokenPattern = {
+    '%Y': '(\\d{4})',
+    '%m': '(\\d{2})',
+    '%d': '(\\d{2})',
+    '%H': '(\\d{2})',
+    '%M': '(\\d{2})',
+    '%S': '(\\d{2})',
+  };
+  const order = [];
+  const regexStr = format.replace(/%[YmdHMS]/g, (token) => {
+    order.push(token);
+    return tokenPattern[token];
+  });
+
+  const match = new RegExp(`^${regexStr}$`).exec(dateString);
+  if (!match) {
+    throw new Error(`datetime_str "${dateString}" does not match format "${format}"`);
+  }
+
+  const now = new Date();
+  const parts = { Y: now.getFullYear(), m: now.getMonth() + 1, d: now.getDate(), H: 0, M: 0, S: 0 };
+  order.forEach((token, i) => {
+    parts[token[1]] = parseInt(match[i + 1], 10);
+  });
+  return new Date(parts.Y, parts.m - 1, parts.d, parts.H, parts.M, parts.S);
+}
+
+const MS_PER_UNIT = {
+  seconds: 1000,
+  minutes: 60 * 1000,
+  hours: 60 * 60 * 1000,
+  days: 24 * 60 * 60 * 1000,
+  weeks: 7 * 24 * 60 * 60 * 1000,
+};
+
+/**
+ * Adds (or subtracts, with a negative amount) a duration to a given
+ * date/time. LLMs are unreliable at date arithmetic — this tool lets
+ * the model offload that math to real code instead of computing it.
+ *
+ * @param {string} datetimeStr - starting date/time, formatted per dateFormat
+ * @param {number} amount - how much to add; negative to subtract
+ * @param {string} unit - one of: seconds, minutes, hours, days, weeks
+ * @param {string} dateFormat - strftime-style format used for both parsing datetimeStr and formatting the result
+ */
+function addDurationToDatetime(datetimeStr, amount, unit, dateFormat = '%Y-%m-%d %H:%M:%S') {
+  if (!datetimeStr) {
+    throw new Error('datetime_str cannot be empty');
+  }
+  if (typeof amount !== 'number' || Number.isNaN(amount)) {
+    throw new Error('amount must be a number');
+  }
+  if (!MS_PER_UNIT[unit]) {
+    throw new Error(`unit must be one of: ${Object.keys(MS_PER_UNIT).join(', ')}`);
+  }
+
+  const startDate = parseDate(datetimeStr, dateFormat);
+  const resultDate = new Date(startDate.getTime() + amount * MS_PER_UNIT[unit]);
+  return formatDate(resultDate, dateFormat);
+}
+
+const addDurationToDatetimeSchema = {
+  type: 'function',
+  function: {
+    name: 'add_duration_to_datetime',
+    description:
+      "Adds (or subtracts, using a negative amount) a duration to a given date/time and returns the resulting date/time. Use this whenever you need to calculate a date or time offset from a known starting point (e.g. 'what time is 90 minutes from now', 'what date is 3 weeks from a given date') — do NOT compute the offset yourself, since date/time arithmetic is easy to get wrong. Returns a single formatted date/time string.",
+    parameters: {
+      type: 'object',
+      properties: {
+        datetime_str: {
+          type: 'string',
+          description:
+            "The starting date/time, formatted per date_format. Typically the output of get_current_datetime, e.g. '2026-07-10 19:22:40'.",
+        },
+        amount: {
+          type: 'number',
+          description: 'How much to add. Use a negative number to subtract instead.',
+        },
+        unit: {
+          type: 'string',
+          enum: ['seconds', 'minutes', 'hours', 'days', 'weeks'],
+          description: 'The unit that amount is measured in.',
+        },
+        date_format: {
+          type: 'string',
+          description:
+            "strftime-style format string, used to BOTH parse datetime_str and format the result. Must match the format datetime_str is actually written in. Defaults to '%Y-%m-%d %H:%M:%S' if omitted.",
+        },
+      },
+      required: ['datetime_str', 'amount', 'unit'],
+    },
+  },
+};
+
+export {
+  getCurrentDatetime,
+  getCurrentDatetimeSchema,
+  addDurationToDatetime,
+  addDurationToDatetimeSchema,
+};
 
