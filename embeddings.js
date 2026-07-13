@@ -29,11 +29,18 @@ function getEmbedder() {
   return embedderPromise;
 }
 
-// Mirrors the lesson's generate_embedding(text) — same shape, local model.
-async function generateEmbedding(text) {
+// Mirrors the lesson's generate_embedding(text) — accepts one string OR an
+// array of strings (batched in a single model call, more efficient than
+// embedding one at a time in a loop).
+async function generateEmbedding(textOrTexts) {
   const embedder = await getEmbedder();
-  const output = await embedder(text, { pooling: 'mean', normalize: true });
-  return Array.from(output.data);
+  const output = await embedder(textOrTexts, { pooling: 'mean', normalize: true });
+
+  if (!Array.isArray(textOrTexts)) return Array.from(output.data);
+
+  const [count, dims] = output.dims;
+  const flat = Array.from(output.data);
+  return Array.from({ length: count }, (_, i) => flat.slice(i * dims, (i + 1) * dims));
 }
 
 // Cosine similarity: 1 = identical meaning, 0 = unrelated, -1 = opposite.
@@ -74,6 +81,10 @@ async function main() {
   console.log(ranked[0].chunk.slice(0, 300));
 }
 
-main();
+import { pathToFileURL } from 'node:url';
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
 
 export { generateEmbedding, cosineSimilarity, findMostRelevantChunk };
