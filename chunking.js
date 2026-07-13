@@ -96,6 +96,10 @@ function main() {
   chunkBySentence(text, 3, 1).forEach((chunk, i) => console.log(`[chunk ${i}]`, JSON.stringify(chunk)));
 }
 
-main();
+import { pathToFileURL } from 'node:url';
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
 
 export { chunkByChar, chunkBySentence, chunkBySection, demonstrateChunkingProblem };
