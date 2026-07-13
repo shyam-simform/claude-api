@@ -23,20 +23,26 @@ import fs from 'node:fs';
 import { chunkBySection } from './chunking.js';
 import { generateEmbedding, cosineSimilarity } from './embeddings.js';
 
+// Same shape as BM25Index (addDocument/search, taking raw text) so both
+// can sit behind the same interface — see hybrid.js's Retriever, which
+// treats any index with this shape interchangeably.
 class VectorIndex {
   constructor() {
     this.vectors = [];
     this.metadata = [];
   }
 
-  addVector(embedding, metadata) {
+  async addDocument(metadata) {
+    const embedding = await generateEmbedding(metadata.content);
     this.vectors.push(embedding);
     this.metadata.push(metadata);
   }
 
-  // Returns the top `k` closest matches, as { metadata, distance } pairs.
-  // Lower distance = more similar (1 - cosine similarity, so 0 = identical).
-  search(queryEmbedding, k = 5) {
+  // Returns the top `k` closest matches, as { metadata, distance } pairs,
+  // best match first. Lower distance = more similar (1 - cosine
+  // similarity, so 0 = identical).
+  async search(queryText, k = 5) {
+    const queryEmbedding = await generateEmbedding(queryText);
     return this.vectors
       .map((vector, i) => ({
         metadata: this.metadata[i],
@@ -52,19 +58,14 @@ async function main() {
   const text = fs.readFileSync('./report.md', 'utf8');
   const chunks = chunkBySection(text);
 
-  // 2. Generate embeddings for all chunks in one batched call
-  const embeddings = await generateEmbedding(chunks);
-
-  // 3. Create a vector store and add each embedding + its original text
+  // 2 & 3. Create a vector store and add each chunk (embeds internally)
   const store = new VectorIndex();
-  embeddings.forEach((embedding, i) => store.addVector(embedding, { content: chunks[i] }));
+  for (const chunk of chunks) await store.addDocument({ content: chunk });
 
-  // 4. Generate an embedding for the user's question
+  // 4 & 5. Search the store for the most relevant chunks (embeds the
+  // query internally too)
   const question = 'What did the software engineering dept do last year?';
-  const questionEmbedding = await generateEmbedding(question);
-
-  // 5. Search the store for the most relevant chunks
-  const results = store.search(questionEmbedding, 2);
+  const results = await store.search(question, 2);
 
   console.log(`Question: "${question}"\n`);
   for (const { metadata, distance } of results) {
@@ -72,6 +73,10 @@ async function main() {
   }
 }
 
-main();
+import { pathToFileURL } from 'node:url';
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
 
 export { VectorIndex };

@@ -100,6 +100,10 @@ async function main() {
   }
 }
 
-main();
+import { pathToFileURL } from 'node:url';
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
 
 export { BM25Index };
