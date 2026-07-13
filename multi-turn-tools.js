@@ -19,18 +19,21 @@ import {
   getCurrentDatetimeSchema,
   addDurationToDatetime,
   addDurationToDatetimeSchema,
+  setReminder,
+  setReminderSchema,
 } from './tools.js';
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 const MODEL = 'llama-3.1-8b-instant';
 
-const TOOLS = [getCurrentDatetimeSchema, addDurationToDatetimeSchema];
+const TOOLS = [getCurrentDatetimeSchema, addDurationToDatetimeSchema, setReminderSchema];
 
 // Maps a schema's function name -> the real function that runs it.
 const TOOL_FUNCTIONS = {
   get_current_datetime: (args) => getCurrentDatetime(args.date_format),
   add_duration_to_datetime: (args) =>
     addDurationToDatetime(args.datetime_str, args.amount, args.unit, args.date_format),
+  set_reminder: (args) => setReminder(args.content, args.timestamp),
 };
 
 // The 8B model sometimes tries to answer in one tool call by nesting a
@@ -109,7 +112,10 @@ async function runConversation(messages) {
 
 async function main() {
   const messages = [];
-  addUserMessage(messages, 'What day is 103 days from today?');
+  addUserMessage(
+    messages,
+    "Set a reminder for my doctor's appointment. It's 177 days after Jan 1st, 2027."
+  );
 
   const finalMessage = await runConversation(messages);
 

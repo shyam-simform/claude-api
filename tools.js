@@ -195,10 +195,59 @@ const addDurationToDatetimeSchema = {
   },
 };
 
+// In-memory store — good enough for learning purposes, no real
+// notification system behind this.
+const reminders = [];
+
+/**
+ * Records a reminder. Real apps would persist this / schedule a
+ * notification; here we just keep it in memory and confirm back.
+ *
+ * @param {string} content - what the reminder is about
+ * @param {string} timestamp - ISO 8601 date/time, e.g. "2050-06-27T00:00:00"
+ */
+function setReminder(content, timestamp) {
+  if (!content) {
+    throw new Error('content cannot be empty');
+  }
+  if (!timestamp || Number.isNaN(new Date(timestamp).getTime())) {
+    throw new Error(`timestamp "${timestamp}" is not a valid ISO 8601 date/time`);
+  }
+
+  reminders.push({ content, timestamp });
+  return `Reminder set for ${timestamp}: ${content}`;
+}
+
+const setReminderSchema = {
+  type: 'function',
+  function: {
+    name: 'set_reminder',
+    description:
+      "Sets a reminder with a message and the exact date/time it's for. Use this once you already know the target date/time — if you need to calculate it first (e.g. 'X days from today'), call get_current_datetime and/or add_duration_to_datetime first and pass their result in here.",
+    parameters: {
+      type: 'object',
+      properties: {
+        content: {
+          type: 'string',
+          description: "What the reminder is about, e.g. \"Doctor's appointment\".",
+        },
+        timestamp: {
+          type: 'string',
+          description:
+            'The target date/time in ISO 8601 format, e.g. "2050-06-27T00:00:00". If this comes from add_duration_to_datetime, ask it for date_format "%Y-%m-%dT%H:%M:%S" so the output is already ISO 8601.',
+        },
+      },
+      required: ['content', 'timestamp'],
+    },
+  },
+};
+
 export {
   getCurrentDatetime,
   getCurrentDatetimeSchema,
   addDurationToDatetime,
   addDurationToDatetimeSchema,
+  setReminder,
+  setReminderSchema,
 };
 
